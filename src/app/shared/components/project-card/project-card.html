@@ -1,0 +1,62 @@
+<article class="card-base group cursor-pointer overflow-hidden">
+  <a [routerLink]="['/work', project().slug]" class="block no-underline">
+    <!-- Thumbnail -->
+    <div
+      class="relative overflow-hidden aspect-[16/10] bg-stone-100 rounded-t-[var(--radius-card)]"
+    >
+      <img
+        [src]="project().thumbnail"
+        [alt]="project().title"
+        loading="lazy"
+        width="600"
+        height="375"
+        class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+      />
+
+      <!-- Hover overlay -->
+      <div
+        class="absolute inset-0 bg-stone-900/0 group-hover:bg-stone-900/40 transition-all duration-300 flex items-center justify-center"
+      >
+        <span
+          class="text-white text-sm font-medium tracking-wide opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+        >
+          View case study →
+        </span>
+      </div>
+
+      <!-- Featured badge -->
+      @if (project().featured) {
+        <span class="absolute top-3 left-3 tag-chip-accent text-xs"> Featured </span>
+      }
+    </div>
+
+    <!-- Card body -->
+    <div class="p-6">
+      <!-- Meta row -->
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-xs text-stone-400">{{ project().year }}</span>
+
+        <div class="flex gap-1.5 flex-wrap justify-end">
+          @for (tag of project().tags.slice(0, 3); track tag) {
+            <span class="tag-chip">{{ tag }}</span>
+          }
+        </div>
+      </div>
+
+      <h3 class="font-display text-xl font-medium text-stone-900 mb-2 leading-snug">
+        {{ project().title }}
+      </h3>
+      <p class="text-sm text-stone-500 leading-relaxed">
+        {{ project().subtitle }}
+      </p>
+
+      <!-- Role chip -->
+      <div class="mt-4 flex items-center gap-2">
+        <span class="text-xs text-stone-400">Role:</span>
+        <span class="text-xs font-medium text-stone-600">
+          {{ project().role }}
+        </span>
+      </div>
+    </div>
+  </a>
+</article>
