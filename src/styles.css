@@ -2,42 +2,42 @@
 
 @import 'tailwindcss';
 
-@theme {
+:root {
   /* Palette – "Warm Coastal Retreat" */
-  --color-coral:      #EC8F8D;     /* Màu ấm chính – điểm nhấn, button primary, accent */
-  --color-coral-dark: #d96d6b;     /* Hover/darken version của coral */
-  --color-teal:       #44A194;     /* Teal xanh ngọc – secondary accent, success, link */
-  --color-navy:       #537D96;     /* Navy xám xanh – heading, text chính, nav active */
-  --color-cream:      #F4F0E4;     /* Nền ấm nhẹ, off-white, card bg */
+  --color-coral: #ec8f8d; /* Màu ấm chính – điểm nhấn, button primary, accent */
+  --color-coral-dark: #d96d6b; /* Hover/darken version của coral */
+  --color-teal: #44a194; /* Teal xanh ngọc – secondary accent, success, link */
+  --color-navy: #537d96; /* Navy xám xanh – heading, text chính, nav active */
+  --color-cream: #f4f0e4; /* Nền ấm nhẹ, off-white, card bg */
 
   /* Neutrals & Surface */
-  --color-bg:         #fdfcfb;     /* Nền page chính – gần #F4F0E4 nhưng sáng hơn tí */
-  --color-surface:    #ffffff;
-  --color-surface-2:  #f9f7f3;     /* Card nhẹ hoặc section alternate */
-  --color-border:     #e2ddd5;     /* Border nhẹ nhàng */
-  --color-border-soft:#f0ede6;
+  --color-bg: #fdfcfb; /* Nền page chính – gần #F4F0E4 nhưng sáng hơn tí */
+  --color-surface: #ffffff;
+  --color-surface-2: #f9f7f3; /* Card nhẹ hoặc section alternate */
+  --color-border: #e2ddd5; /* Border nhẹ nhàng */
+  --color-border-soft: #f0ede6;
 
   /* Text semantic */
-  --color-text:       #2d3748;     /* Text chính – tối vừa đủ, không đen đậm */
-  --color-text-muted: #5a7184;     /* Mô tả, meta, caption */
-  --color-text-subtle:#8a9bad;     /* Rất mờ, placeholder */
+  --color-text: #2d3748; /* Text chính – tối vừa đủ, không đen đậm */
+  --color-text-muted: #5a7184; /* Mô tả, meta, caption */
+  --color-text-subtle: #8a9bad; /* Rất mờ, placeholder */
 
   /* States */
-  --color-success:    #44A194;
-  --color-info:       #537D96;
-  --color-warning:    #EC8F8D;
-  --color-error:      #c94c4c;
+  --color-success: #44a194;
+  --color-info: #537d96;
+  --color-warning: #ec8f8d;
+  --color-error: #c94c4c;
 
   /* Font families */
-  --font-body:    'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-display: 'Playfair Display', Georgia, serif;
-  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
   /* Border radius cơ bản */
-  --radius-sm:  6px;
-  --radius-md:  12px;
-  --radius-lg:  20px;
-  --radius-pill:9999px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
 
   /* Spacing gợi ý ban đầu */
   --spacing-section: 5rem;
@@ -45,31 +45,31 @@
 
 /* ── Dark mode overrides */
 @media (prefers-color-scheme: dark) {
-  @theme {
+  :root {
     /* Background & Surface */
-    --color-bg:         #0f172a;       /* slate-950 */
-    --color-surface:    #1e293b;       /* slate-800 */
-    --color-surface-2:  #334155;       /* slate-700 */
-    --color-border:     #475569;       /* slate-600 */
-    --color-border-soft:#334155;
+    --color-bg: #0f172a; /* slate-950 */
+    --color-surface: #1e293b; /* slate-800 */
+    --color-surface-2: #334155; /* slate-700 */
+    --color-border: #475569; /* slate-600 */
+    --color-border-soft: #334155;
 
     /* Text */
-    --color-text:       #f1f5f9;       /* slate-100 */
-    --color-text-muted: #cbd5e1;       /* slate-300 */
-    --color-text-subtle:#94a3b8;       /* slate-400 */
+    --color-text: #f1f5f9; /* slate-100 */
+    --color-text-muted: #cbd5e1; /* slate-300 */
+    --color-text-subtle: #94a3b8; /* slate-400 */
 
     /* Palette adjustments for better contrast in dark */
-    --color-coral:      #f4a29f;       /* brighten lên một chút để nổi bật hơn */
+    --color-coral: #f4a29f; /* brighten lên một chút để nổi bật hơn */
     --color-coral-dark: #e07c79;
-    --color-teal:       #5cc0b0;       /* brighten teal cho dễ đọc */
-    --color-navy:       #80a8c2;       /* navy nhạt hơn, dùng cho heading */
-    --color-cream:      #2d3748;       /* cream tối đi thành slate-700-ish */
+    --color-teal: #5cc0b0; /* brighten teal cho dễ đọc */
+    --color-navy: #80a8c2; /* navy nhạt hơn, dùng cho heading */
+    --color-cream: #2d3748; /* cream tối đi thành slate-700-ish */
 
     /* States – giữ nguyên hoặc điều chỉnh nhẹ */
-    --color-success:    #5cc0b0;
-    --color-info:       #80a8c2;
-    --color-warning:    #f4a29f;
-    --color-error:      #fca5a5;
+    --color-success: #5cc0b0;
+    --color-info: #80a8c2;
+    --color-warning: #f4a29f;
+    --color-error: #fca5a5;
   }
 }
 
@@ -113,16 +113,30 @@
   }
 
   /* Typography defaults cho headings (sẽ override bằng class nếu cần) */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
     line-height: 1.2;
     color: var(--color-text);
     margin: 0;
   }
 
-  h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); letter-spacing: -0.02em; }
-  h2 { font-size: clamp(1.75rem, 4vw, 2.5rem);  letter-spacing: -0.015em; }
-  h3 { font-size: clamp(1.5rem, 3.5vw, 2rem);   letter-spacing: -0.01em; }
+  h1 {
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    letter-spacing: -0.015em;
+  }
+  h3 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    letter-spacing: -0.01em;
+  }
 
   /* Links mặc định – underline nhẹ khi hover */
   a {
@@ -203,7 +217,6 @@
   }
 
   .btn-primary {
-    @apply btn;
     background: var(--color-coral);
     color: white;
     box-shadow: 0 2px 8px color-mix(in srgb, var(--color-coral) 30%, transparent);
@@ -221,7 +234,6 @@
   }
 
   .btn-secondary {
-    @apply btn;
     background: transparent;
     color: var(--color-navy);
     border: 1px solid var(--color-border);
@@ -234,7 +246,6 @@
   }
 
   .btn-ghost {
-    @apply btn;
     background: transparent;
     color: var(--color-text-muted);
     padding: 0.5rem 1rem;
@@ -262,7 +273,12 @@
 
   /* Variant cho project card (có thumb hover scale) */
   .card-project {
-    @apply card-base;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 12px rgba(83, 125, 150, 0.08);
+    overflow: hidden;
+    transition: all 250ms var(--ease-smooth);
   }
 
   .card-project .project-thumb {
@@ -357,7 +373,9 @@
   .scroll-reveal {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 600ms var(--ease-out-expo), transform 600ms var(--ease-out-expo);
+    transition:
+      opacity 600ms var(--ease-out-expo),
+      transform 600ms var(--ease-out-expo);
   }
 
   .reveal.active,

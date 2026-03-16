@@ -1,62 +1,72 @@
-<section class="min-h-svh flex flex-col justify-center pt-16 px-0 relative overflow-hidden">
-  <!-- Warm background gradient blob -->
-  <div
-    class="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-gradient-to-bl from-warm-100/60 to-transparent blur-3xl -z-10 pointer-events-none"
-    aria-hidden="true"></div>
-
-  <div class="container-portfolio py-24">
-    <!-- Eyebrow -->
-    <p class="eyebrow mb-5 reveal" style="--delay: 0ms">UI/UX Designer · Frontend Developer</p>
-
-    <!-- Hero headline — Lora serif + italic accent -->
-    <h1 class="heading-display mb-6 reveal" style="--delay: 80ms">
-      Designed with<br />
-      <em class="text-accent not-italic font-[Lora] italic">clarity.</em>
-      <br />Built with care.
-    </h1>
-
-    <!-- Sub copy -->
-    <p class="text-lg text-stone-500 max-w-[480px] leading-relaxed mb-10 reveal" style="--delay: 160ms">
-      I'm [Your Name] — a junior UI/UX designer who spent 4 years learning how software is built,
-      and now uses that knowledge to design it better.
-    </p>
-
-    <!-- CTAs -->
-    <div class="flex flex-wrap gap-3 mb-20 reveal" style="--delay: 240ms">
-      <a class="btn-primary" routerLink="/" fragment="work"> View my work </a>
-      <a class="btn-ghost" href="assets/resume.pdf" target="_blank" rel="noopener">
-        Download résumé ↗
-      </a>
-    </div>
-
-    <!-- Research stats strip — your 183-survey data -->
-    <div class="flex flex-wrap gap-10 pt-8 border-t border-border reveal" style="--delay: 320ms">
-      @for (s of stats; track s.label) {
-      <div class="flex flex-col gap-1">
-        <span class="font-display text-4xl font-medium text-stone-900 leading-none">
-          {{ s.number }}
-        </span>
-
-        <span class="text-xs text-stone-400 tracking-wide uppercase">
-          {{ s.label }}
-        </span>
+<section
+  id="home"
+  class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-cream via-surface to-cream/80 pt-20 pb-16 md:pt-32"
+>
+  <div class="container-section grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <!-- Left: Text Content -->
+    <div class="space-y-8 md:space-y-10 text-center md:text-left">
+      <div class="space-y-4">
+        <p class="eyebrow">UI/UX Designer</p>
+        <h1 class="heading-display text-navy">
+          Hi, I'm Huỳnh Ngọc Bảo Châu
+        </h1>
+        <p class="text-2xl md:text-3xl font-medium text-text-muted leading-relaxed">
+          Crafting warm, intuitive, and human-centered digital experiences.
+        </p>
       </div>
-      }
+
+      <p class="text-lg md:text-xl text-text-muted max-w-2xl mx-auto md:mx-0 leading-relaxed">
+        Fresh graduate turned UI/UX enthusiast. Started with frontend development (Angular + Tailwind), 
+        but discovered my true passion lies in designing delightful user experiences that feel welcoming and effortless.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
+        <a
+          routerLink="/"
+          fragment="projects"
+          class="btn btn-primary text-base px-8 py-3"
+        >
+          Explore My Projects
+        </a>
+        <a
+          routerLink="/"
+          fragment="about"
+          class="btn btn-secondary text-base px-8 py-3"
+        >
+          Learn More About Me
+        </a>
+        <a
+          href="/assets/cv/your-cv.pdf"
+          download
+          class="btn btn-ghost text-base px-6 py-3"
+        >
+          Download CV
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Visual / Profile -->
+    <div class="relative flex justify-center md:justify-end">
+      <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-teal/20 hover-scale">
+        <img
+          src="/assets/images/profile/avatar.png"
+          alt="Huỳnh Ngọc Bảo Châu - UI/UX Designer"
+          class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+        />
+        <!-- Optional: subtle overlay shape -->
+        <div class="absolute inset-0 bg-gradient-to-tr from-coral/10 to-teal/10 pointer-events-none"></div>
+      </div>
+
+      <!-- Decorative elements (optional, coastal vibe) -->
+      <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-coral/20 rounded-full blur-3xl"></div>
+      <div class="absolute -top-12 -left-12 w-40 h-40 bg-teal/10 rounded-full blur-3xl"></div>
     </div>
   </div>
-</section>
 
-<section id="work" class="py-section container-portfolio">
-  <!-- Section header -->
-  <div class="mb-14 scroll-reveal">
-    <p class="eyebrow mb-3">Selected work</p>
-    <h2 class="heading-xl text-stone-900">Projects I'm proud of</h2>
-  </div>
-
-  <!-- Grid -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    @for (p of projects; track p.slug) {
-    <app-project-card [project]="p" class="scroll-reveal"> </app-project-card>
-    }
+  <!-- Scroll indicator (optional, subtle) -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <svg class="w-8 h-8 text-navy/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+    </svg>
   </div>
 </section>

@@ -1,0 +1,107 @@
+<header
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 animate-fade"
+  [ngClass]="{
+    'bg-cream/80 backdrop-blur-md shadow-sm': isScrolled,
+    'bg-transparent': !isScrolled
+  }"
+  [@fadeIn]
+>
+  <nav class="container-section flex items-center justify-between h-20">
+    <!-- Logo -->
+    <a
+      routerLink="/"
+      class="flex items-center gap-2 text-navy font-display font-semibold text-2xl tracking-tight"
+    >
+      <span class="text-coral">HNBC</span>
+      <!-- hoặc dùng initial của bạn: <span class="text-coral">NB</span> -->
+    </a>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center gap-8">
+      <div class="flex gap-8">
+        @for (item of navItems; track item.fragment) {
+          <button
+            (click)="scrollTo(item.fragment)"
+            class="text-text-muted hover:text-coral transition-colors font-medium text-sm uppercase tracking-wide"
+          >
+            {{ item.label }}
+          </button>
+        }
+      </div>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-4">
+        <a
+          href="/assets/cv/your-cv.pdf"
+          download
+          class="btn btn-secondary text-sm px-5 py-2"
+        >
+          Download CV
+        </a>
+        <button
+          (click)="scrollTo('contact')"
+          class="btn btn-primary text-sm px-6 py-2"
+        >
+          Let's Chat
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      class="md:hidden text-navy focus:outline-none"
+      (click)="toggleMenu()"
+      aria-label="Toggle menu"
+    >
+      <svg
+        class="w-8 h-8"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          [attr.d]="menuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'"
+        />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu Dropdown -->
+  <div
+    class="md:hidden overflow-hidden transition-all duration-300 ease-in-out"
+    [ngClass]="{
+      'max-h-96 opacity-100 py-4 animate-fade': menuOpen,
+      'max-h-0 opacity-0': !menuOpen
+    }"
+  >
+    <div class="container-section flex flex-col gap-4">
+      @for (item of navItems; track item.fragment) {
+        <button
+          (click)="scrollTo(item.fragment)"
+          class="text-left py-3 text-lg font-medium text-text hover:text-coral transition-colors"
+        >
+          {{ item.label }}
+        </button>
+      }
+
+      <div class="flex flex-col gap-3 pt-4 border-t border-border">
+        <a
+          href="/assets/cv/your-cv.pdf"
+          download
+          class="btn btn-secondary justify-center py-3"
+        >
+          Download CV
+        </a>
+        <button
+          (click)="scrollTo('contact')"
+          class="btn btn-primary justify-center py-3"
+        >
+          Let's Chat
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
