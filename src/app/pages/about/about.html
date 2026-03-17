@@ -1,89 +1,150 @@
-<section
-  id="about"
-  class="py-24 md:py-32 bg-surface-2 relative overflow-hidden"
->
+<section id="about" class="py-24 md:py-32 bg-surface-2 relative overflow-hidden">
   <div class="container-section">
     <!-- Section Heading -->
     <div class="text-center mb-16">
       <p class="eyebrow">About Me</p>
-      <h2 class="heading-xl text-navy mt-4">
-        A Journey from Code to Human-Centered Design
-      </h2>
+      <h2 class="h1 text-navy mt-4">A Journey from Code to Human-Centered Design</h2>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <!-- Left: Profile Image + Decor -->
-      <div class="relative flex justify-center md:justify-start">
-        <div class="relative w-64 h-64 md:w-96 md:h-96 rounded-3xl overflow-hidden shadow-2xl hover-scale border-8 border-cream">
+    <div class="space-y-16">
+      <!-- Avatar -->
+      <div class="relative flex justify-center">
+        <div
+          class="relative w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden shadow-2xl border border-border hover:scale-105 transition-all duration-500"
+        >
           <img
             src="/assets/images/profile/avatar.png"
-            alt="Huỳnh Ngọc Bảo Châu - UI/UX Designer"
-            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
           />
-          <!-- Subtle overlay gradient -->
-          <div class="absolute inset-0 bg-gradient-to-tr from-teal/10 to-coral/10 pointer-events-none"></div>
+          <div class="absolute inset-0 bg-gradient-to-tr from-teal/10 to-coral/10"></div>
         </div>
 
-        <!-- Decorative blobs (coastal feel) -->
-        <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-teal/20 rounded-full blur-3xl opacity-70"></div>
-        <div class="absolute -top-12 -right-12 w-64 h-64 bg-coral/10 rounded-full blur-3xl opacity-60"></div>
+        <!-- glow -->
+        <div class="absolute -z-10 w-96 h-96 bg-coral/20 blur-[120px] rounded-full"></div>
       </div>
 
-      <!-- Right: Content -->
-      <div class="space-y-10">
-        <!-- Story Paragraph -->
-        <div class="space-y-6 text-text-muted text-lg leading-relaxed">
-          <p>
-            Xin chào! Mình là Bảo Châu, một fresh graduate đam mê thiết kế trải nghiệm người dùng. Ban đầu mình theo hướng frontend developer vì thích code và xây dựng giao diện responsive bằng Angular + Tailwind. Nhưng qua các dự án môn học (đặc biệt là đồ án UI/UX), mình nhận ra niềm vui thực sự đến từ việc hiểu người dùng, giải quyết vấn đề của họ và tạo ra những sản phẩm không chỉ đẹp mà còn ấm áp, dễ chịu.
-          </p>
-          <p>
-            Hiện tại mình đang chuyển hướng hoàn toàn sang UI/UX design, tập trung vào phong cách human-centered với tông màu ấm áp, gần gũi (coral, teal, cream). Mình tin rằng thiết kế tốt phải mang lại cảm giác thoải mái như một buổi chiều bên bờ biển.
-          </p>
-        </div>
+      <!-- Story Paragraph -->
+      <div class="max-w-3xl mx-auto text-center space-y-6 text-text-muted text-lg leading-relaxed">
+        <p>
+          Xin chào! Mình là Bảo Châu, một fresh graduate đam mê thiết kế trải nghiệm người dùng. Ban
+          đầu mình theo hướng frontend developer vì thích code và xây dựng giao diện responsive bằng
+          Angular + Tailwind. Nhưng qua các dự án môn học (đặc biệt là đồ án UI/UX), mình nhận ra
+          niềm vui thực sự đến từ việc hiểu người dùng, giải quyết vấn đề của họ và tạo ra những sản
+          phẩm không chỉ đẹp mà còn ấm áp, dễ chịu.
+        </p>
+        <p>
+          Hiện tại mình đang chuyển hướng hoàn toàn sang UI/UX design, tập trung vào phong cách
+          human-centered với tông màu ấm áp, gần gũi (coral, teal, cream). Mình tin rằng thiết kế
+          tốt phải mang lại cảm giác thoải mái như một buổi chiều bên bờ biển.
+        </p>
+      </div>
 
-        <!-- Timeline / Key Milestones -->
-        <div class="space-y-8">
-          <div class="space-y-6">
-            <h3 class="heading-md text-navy">Education</h3>
-            <div class="bg-surface border border-border rounded-2xl p-6 shadow-sm">
-              <p class="font-medium text-text">Đại học [Tên trường của bạn]</p>
-              <p class="text-text-muted">Ngành [Tên ngành] • 20xx – 202x</p>
-              <p class="text-text-muted mt-1">GPA: [X.XX / 4.0] (nếu tốt thì show, không thì bỏ dòng này)</p>
+      <!-- Timeline / Key Milestones -->
+
+      <div class="relative max-w-5xl mx-auto pt-24 mt-8 md:mt-12">
+        <!-- Floating Cards Grid -->
+        <div class="relative grid grid-cols-1 md:grid-cols-3 gap-20 md:gap-20">
+          <!-- Card 1: Internship (đặt giữa để nổi bật nhất vì là kinh nghiệm thực tế) -->
+          <div class="relative group order-2 md:order-2 md:-mt-12">
+            <div
+              class="card-floating bg-surface border border-border/50 rounded-3xl p-8 md:p-10 shadow-2xl hover:shadow-[0_30px_60px_-15px_rgba(236,143,141,0.3)] transition-all duration-500 hover:-translate-y-6 hover:scale-[1.03] backdrop-blur-sm"
+            >
+              <div class="absolute -top-16 left-1/2 transform -translate-x-1/2">
+                <div class="w-28 h-28 rounded-full bg-white flex items-center justify-center shadow-xl border border-border/30">
+                  <img
+                    src="/assets/images/logos/vnpt-logo.webp"
+                    class="w-20 h-20 object-contain"
+                    alt="VNPT"
+                  />
+                </div>
+              </div>
+
+              <div class="mt-16 text-center space-y-4">
+                <h3 class="heading-lg text-navy">Internship Experience</h3>
+                <p class="font-medium text-text">[Vị trí] Intern • [Tên công ty]</p>
+                <p class="text-sm text-text-muted">[Thời gian] (4 tháng)</p>
+
+                <ul class="mt-6 space-y-3 text-left text-text-muted text-sm">
+                  <li class="flex items-start gap-3">
+                    <span class="text-teal text-xl">•</span>
+                    Thiết kế giao diện & wireframe cho dự án thực tế
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-teal text-xl">•</span>
+                    Hỗ trợ nghiên cứu người dùng & cải tiến theo feedback
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="text-teal text-xl">•</span>
+                    Phối hợp team dev để triển khai design chính xác
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          <div class="space-y-6">
-            <h3 class="heading-md text-navy">Internship Experience</h3>
-            <div class="bg-surface border border-border rounded-2xl p-6 shadow-sm">
-              <p class="font-medium text-text">[Vị trí] Intern • [Tên công ty]</p>
-              <p class="text-text-muted">[Tháng/Năm] – [Tháng/Năm] (4 tháng)</p>
-              <ul class="mt-4 space-y-2 text-text-muted list-disc pl-5">
-                <li>Tham gia thiết kế giao diện và wireframe cho [sản phẩm/dự án cụ thể nếu có].</li>
-                <li>Hỗ trợ user research và iterate design dựa trên feedback.</li>
-                <li>Làm việc cùng team dev để đảm bảo design được implement chính xác.</li>
-                <li>Sử dụng chủ yếu Figma, Tailwind và một chút code frontend.</li>
-              </ul>
+          <!-- Card 2: Education -->
+          <div class="relative group order-1 md:order-1">
+            <div
+              class="card-floating bg-surface border border-border/50 rounded-3xl p-8 md:p-10 shadow-2xl hover:shadow-[0_30px_60px_-15px_rgba(68,161,148,0.3)] transition-all duration-500 hover:-translate-y-6 hover:scale-[1.03] backdrop-blur-sm"
+            >
+              <div class="absolute -top-16 left-1/2 transform -translate-x-1/2">
+                <div class="w-28 h-28 rounded-full bg-white flex items-center justify-center shadow-xl border border-border/30">
+                  <img
+                    src="/assets/images/logos/uit-logo.png"
+                    class="w-20 h-20 object-contain"
+                    alt="UIT"
+                  />
+                </div>
+              </div>
+
+              <div class="mt-16 text-center space-y-4">
+                <h3 class="heading-lg text-navy">Education</h3>
+                <p class="font-medium text-text">Đại học Công nghệ Thông tin</p>
+                <p class="text-sm text-text-muted">Ngành [Tên ngành] • 20xx – 202x</p>
+                <p class="text-teal font-medium mt-4">GPA: [X.XX / 4.0]</p>
+              </div>
             </div>
           </div>
 
-          <div class="space-y-6">
-            <h3 class="heading-md text-navy">Languages</h3>
-            <p class="text-text-muted">
-              Tiếng Anh: TOEIC Reading & Listening [điểm thật] • Speaking & Writing [điểm thật]<br>
-              (Comfortable giao tiếp và làm việc trong môi trường tiếng Anh)
-            </p>
+          <!-- Card 3: Languages -->
+          <div class="relative group order-3 md:order-3 md:-mt-12">
+            <div
+              class="card-floating bg-surface border border-border/50 rounded-3xl p-8 md:p-10 shadow-2xl hover:shadow-[0_30px_60px_-15px_rgba(236,143,141,0.3)] transition-all duration-500 hover:-translate-y-6 hover:scale-[1.03] backdrop-blur-sm"
+            >
+              <div class="absolute -top-16 left-1/2 transform -translate-x-1/2">
+                <div class="w-28 h-28 rounded-full bg-white flex items-center justify-center shadow-xl border border-border/30">
+                  <img
+                    src="/assets/images/logos/toeic-logo.png"
+                    class="w-20 h-20 object-contain"
+                    alt="UIT"
+                  />
+                </div>
+              </div>
+
+              <div class="mt-16 text-center space-y-4">
+                <h3 class="heading-lg text-navy">Languages</h3>
+                <p class="font-medium text-text">Tiếng Anh</p>
+                <p class="text-sm text-text-muted leading-relaxed">
+                  TOEIC Reading & Listening: [điểm thật]<br />
+                  Speaking & Writing: [điểm thật]<br />
+                  <span class="text-teal text-base font-medium mt-2 block">
+                    Comfortable giao tiếp & làm việc chuyên nghiệp
+                  </span>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
 
-        <!-- Quick Stats -->
-        <div class="grid grid-cols-3 gap-4 pt-6">
-          @for (stat of stats; track stat.label) {
-            <div class="bg-cream/50 border border-border-soft rounded-xl p-4 text-center">
-              <p class="text-2xl font-semibold text-coral">{{ stat.value }}</p>
-              <p class="text-sm text-text-muted mt-1">{{ stat.label }}</p>
-            </div>
-          }
-        </div>
+      <!-- Quick Stats -->
+      <div class="grid grid-cols-3 gap-4 pt-6">
+        @for (stat of stats; track stat.label) {
+          <div class="bg-cream border border-border-soft rounded-xl p-4 text-center">
+            <p class="text-2xl font-semibold text-coral">{{ stat.value }}</p>
+            <p class="text-sm text-text-muted mt-1">{{ stat.label }}</p>
+          </div>
+        }
       </div>
     </div>
   </div>

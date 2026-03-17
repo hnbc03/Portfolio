@@ -2,73 +2,18 @@
   display: block;
 }
 
-.logo {
-  color: white;
-  transition: all 300ms ease;
-  cursor: pointer;
-}
-
 .logo-accent {
-  color: var(--color-cream);
   transition: all 300ms ease;
 }
 
 .logo:hover {
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
 }
 
 .logo:hover .logo-accent {
-  color: var(--color-coral-soft);
+  color: var(--color-coral);
 }
 
 .logo:hover span:not(.logo-accent) {
   color: var(--color-coral);
-}
-
-.nav-link {
-  position: relative;
-  color: var(--color-cream);
-  transition: all 250ms ease;
-}
-
-.nav-link:hover {
-  color: var(--color-coral-soft);
-  transform: translateY(-1px);
-  cursor: pointer;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 2px;
-  background: var(--color-coral);
-
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 250ms ease;
-}
-
-.nav-link:hover::after {
-  transform: scaleX(1);
-}
-
-.nav-link.active {
-  color: var(--color-navy);
-}
-
-.nav-link.active::after {
-  transform: scaleX(1);
-  background: var(--color-navy);
-}
-
-header {
-  backdrop-filter: blur(0px);
-  transition: all 400ms ease;
-}
-
-header.scrolled {
-  backdrop-filter: blur(16px);
 }

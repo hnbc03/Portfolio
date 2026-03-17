@@ -1,4 +1,5 @@
-import { Component, inject, HostListener } from '@angular/core';
+import { Component, inject, HostListener, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 
@@ -11,9 +12,11 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class Navbar {
   private router = inject(Router);
+  private platformId = inject(PLATFORM_ID);
 
   isScrolled = false;
   menuOpen = false;
+  isDarkMode = false;
 
   navItems = [
     { label: 'Home', fragment: 'home', icon: 'home' },
@@ -26,6 +29,33 @@ export class Navbar {
   @HostListener('window:scroll', [])
   onScroll() {
     this.isScrolled = window.scrollY > 20;
+  }
+
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      // 1. Ưu tiên localStorage
+      const savedTheme = localStorage.getItem('theme');
+
+      if (savedTheme) {
+        this.isDarkMode = savedTheme === 'dark';
+      } else {
+        // 2. Nếu không có → dùng system preference
+        this.isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      }
+
+      // Áp dụng class
+      document.documentElement.classList.toggle('dark', this.isDarkMode);
+    }
+  }
+
+  toggleTheme() {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    this.isDarkMode = !this.isDarkMode;
+    document.documentElement.classList.toggle('dark', this.isDarkMode);
+
+    // Lưu vào localStorage
+    localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
   }
 
   scrollTo(fragment: string) {
@@ -48,7 +78,7 @@ export class Navbar {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
   }
