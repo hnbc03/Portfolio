@@ -2,14 +2,14 @@
 
 @import 'tailwindcss';
 
-:root {
+@theme {
   /* Palette – Updated with your 4 colors */
-  --color-coral: #f97345; /* Màu cam chính rực rỡ – button primary, accent */
-  --color-coral-soft: #ffe4d9;
+  --color-coral: #FE7743; /* Màu cam chính rực rỡ – button primary, accent */
+  --color-coral-soft: #F0A64A;
   --color-coral-dark: #e66a3a; /* Hover version của #FE7743 (tối hơn 10%) */
   --color-teal: #447d9b; /* Xanh biển trung tính – secondary accent, success, link */
   --color-navy: #273f4f; /* Xanh Navy đậm – heading, text chính, nav active */
-  --color-cream: #d7d7d7; /* Xám nhạt – nền nhẹ, off-white, card bg */
+  --color-cream: #F2F2F2; /* Xám nhạt – nền nhẹ, off-white, card bg */
 
   /* Neutrals & Surface */
   --color-bg: #f5f7f8; /* Nền page chính – sáng và sạch sẽ */

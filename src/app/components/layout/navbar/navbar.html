@@ -1,18 +1,14 @@
 <header
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 animate-fade"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out animate-fade"
   [ngClass]="{
-    'bg-cream/80 backdrop-blur-md shadow-sm': isScrolled,
-    'bg-transparent': !isScrolled
+    'bg-[var(--color-navy)]/90 backdrop-blur-md shadow-lg': isScrolled,
+    'bg-[var(--color-navy)] backdrop-blur-sm': !isScrolled,
   }"
 >
   <nav class="container-section flex items-center justify-between h-20">
     <!-- Logo -->
-    <a
-      routerLink="/"
-      class="flex items-center gap-2 text-navy font-display font-semibold text-2xl tracking-tight"
-    >
-      <span class="text-coral">HNBC</span>
-      <!-- hoặc dùng initial của bạn: <span class="text-coral">NB</span> -->
+    <a class="logo flex items-center gap-2 font-display font-semibold text-2xl tracking-tight">
+      <span class="logo-accent">HNBC</span>
     </a>
 
     <!-- Desktop Menu -->
@@ -21,7 +17,8 @@
         @for (item of navItems; track item.fragment) {
           <button
             (click)="scrollTo(item.fragment)"
-            class="text-text-muted hover:text-coral transition-colors font-medium text-sm uppercase tracking-wide"
+            class="nav-link text-text-muted font-medium text-sm uppercase tracking-wide"
+            [ngClass]="{ active: false }"
           >
             {{ item.label }}
           </button>
@@ -31,16 +28,13 @@
       <!-- Actions -->
       <div class="flex items-center gap-4">
         <a
-          href="/assets/cv/your-cv.pdf"
-          download
-          class="btn btn-secondary text-sm px-5 py-2"
+          href="assets/cv/UIUXDesigner_HuynhNgocBaoChau.pdf"
+          download="UIUXDesigner_HuynhNgocBaoChau.pdf"
+          class="btn btn-secondary text-white border-white/30 hover:bg-white/10"
         >
           Download CV
         </a>
-        <button
-          (click)="scrollTo('contact')"
-          class="btn btn-primary text-sm px-6 py-2"
-        >
+        <button (click)="scrollTo('contact')" class="btn btn-primary text-sm px-6 py-2">
           Let's Chat
         </button>
       </div>
@@ -48,16 +42,11 @@
 
     <!-- Mobile Menu Button -->
     <button
-      class="md:hidden text-navy focus:outline-none"
+      class="md:hidden text-white focus:outline-none"
       (click)="toggleMenu()"
       aria-label="Toggle menu"
     >
-      <svg
-        class="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
           stroke-linecap="round"
           stroke-linejoin="round"
@@ -70,17 +59,17 @@
 
   <!-- Mobile Menu Dropdown -->
   <div
-    class="md:hidden overflow-hidden transition-all duration-300 ease-in-out"
+    class="md:hidden overflow-hidden bg-navy/95 backdrop-blur-md"
     [ngClass]="{
-      'max-h-96 opacity-100 py-4 animate-fade': menuOpen,
-      'max-h-0 opacity-0': !menuOpen
+      'max-h-320 opacity-100 py-4 animate-fade': menuOpen,
+      'max-h-0 opacity-0': !menuOpen,
     }"
   >
     <div class="container-section flex flex-col gap-4">
       @for (item of navItems; track item.fragment) {
         <button
           (click)="scrollTo(item.fragment)"
-          class="text-left py-3 text-lg font-medium text-text hover:text-coral transition-colors"
+          class="text-left py-3 text-lg font-medium text-white transition-all duration-300 hover:text-coral hover:translate-x-1"
         >
           {{ item.label }}
         </button>
@@ -88,16 +77,13 @@
 
       <div class="flex flex-col gap-3 pt-4 border-t border-border">
         <a
-          href="/assets/cv/your-cv.pdf"
-          download
-          class="btn btn-secondary justify-center py-3"
+          href="/assets/cv/UIUXDesigner_HuynhNgocBaoChau.pdf"
+          download="UIUXDesigner_HuynhNgocBaoChau.pdf"
+          class="btn btn-secondary text-white border-white/30 hover:bg-white/10"
         >
           Download CV
         </a>
-        <button
-          (click)="scrollTo('contact')"
-          class="btn btn-primary justify-center py-3"
-        >
+        <button (click)="scrollTo('contact')" class="btn btn-primary justify-center py-3">
           Let's Chat
         </button>
       </div>
