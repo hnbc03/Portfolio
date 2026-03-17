@@ -1,32 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
 
 @import 'tailwindcss';
 
 :root {
-  /* Palette – "Warm Coastal Retreat" */
-  --color-coral: #ec8f8d; /* Màu ấm chính – điểm nhấn, button primary, accent */
-  --color-coral-dark: #d96d6b; /* Hover/darken version của coral */
-  --color-teal: #44a194; /* Teal xanh ngọc – secondary accent, success, link */
-  --color-navy: #537d96; /* Navy xám xanh – heading, text chính, nav active */
-  --color-cream: #f4f0e4; /* Nền ấm nhẹ, off-white, card bg */
+  /* Palette – Updated with your 4 colors */
+  --color-coral: #f97345; /* Màu cam chính rực rỡ – button primary, accent */
+  --color-coral-soft: #ffe4d9;
+  --color-coral-dark: #e66a3a; /* Hover version của #FE7743 (tối hơn 10%) */
+  --color-teal: #447d9b; /* Xanh biển trung tính – secondary accent, success, link */
+  --color-navy: #273f4f; /* Xanh Navy đậm – heading, text chính, nav active */
+  --color-cream: #d7d7d7; /* Xám nhạt – nền nhẹ, off-white, card bg */
 
   /* Neutrals & Surface */
-  --color-bg: #fdfcfb; /* Nền page chính – gần #F4F0E4 nhưng sáng hơn tí */
+  --color-bg: #f5f7f8; /* Nền page chính – sáng và sạch sẽ */
   --color-surface: #ffffff;
-  --color-surface-2: #f9f7f3; /* Card nhẹ hoặc section alternate */
-  --color-border: #e2ddd5; /* Border nhẹ nhàng */
-  --color-border-soft: #f0ede6;
+  --color-surface-2: #e9ecef; /* Card nhẹ hoặc section alternate */
+  --color-border: #d7d7d7; /* Tận dụng mã màu xám của bạn cho border */
+  --color-border-soft: #e2e2e2;
+  --color-surface-elevated: rgba(255, 255, 255, 0.6);
+  --blur-glass: blur(12px);
 
   /* Text semantic */
-  --color-text: #2d3748; /* Text chính – tối vừa đủ, không đen đậm */
-  --color-text-muted: #5a7184; /* Mô tả, meta, caption */
-  --color-text-subtle: #8a9bad; /* Rất mờ, placeholder */
+  --color-text: #273f4f; /* Dùng Navy đậm cho text để đạt độ tương phản cao */
+  --color-text-muted: #4f6778; /* Xám xanh – mô tả, meta */
+  --color-text-subtle: #8a9bad; /* Placeholder */
 
   /* States */
-  --color-success: #44a194;
-  --color-info: #537d96;
-  --color-warning: #ec8f8d;
-  --color-error: #c94c4c;
+  --color-success: #447d9b;
+  --color-info: #447d9b;
+  --color-warning: #fe7743;
+  --color-error: #d9534f; /* Giữ tông đỏ chuẩn để đảm bảo tính cảnh báo */
 
   /* Font families */
   --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -35,41 +38,41 @@
 
   /* Border radius cơ bản */
   --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
   --radius-pill: 9999px;
 
   /* Spacing gợi ý ban đầu */
-  --spacing-section: 5rem;
+  --spacing-section: 7rem;
 }
 
 /* ── Dark mode overrides */
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Background & Surface */
-    --color-bg: #0f172a; /* slate-950 */
-    --color-surface: #1e293b; /* slate-800 */
-    --color-surface-2: #334155; /* slate-700 */
-    --color-border: #475569; /* slate-600 */
-    --color-border-soft: #334155;
+    /* Background & Surface – Sử dụng tông Navy đậm làm nền */
+    --color-bg: #1a2a35;
+    --color-surface: #273f4f; /* Dùng mã #273F4F của bạn làm bề mặt chính */
+    --color-surface-2: #334d5e;
+    --color-border: #447d9b;
+    --color-border-soft: #38566a;
 
     /* Text */
-    --color-text: #f1f5f9; /* slate-100 */
-    --color-text-muted: #cbd5e1; /* slate-300 */
-    --color-text-subtle: #94a3b8; /* slate-400 */
+    --color-text: #f1f5f9;
+    --color-text-muted: #d7d7d7; /* Dùng mã xám của bạn làm text phụ */
+    --color-text-subtle: #94a3b8;
 
-    /* Palette adjustments for better contrast in dark */
-    --color-coral: #f4a29f; /* brighten lên một chút để nổi bật hơn */
-    --color-coral-dark: #e07c79;
-    --color-teal: #5cc0b0; /* brighten teal cho dễ đọc */
-    --color-navy: #80a8c2; /* navy nhạt hơn, dùng cho heading */
-    --color-cream: #2d3748; /* cream tối đi thành slate-700-ish */
+    /* Palette adjustments */
+    --color-coral: #ff8f66; /* Brighten cam một chút để nổi bật trên nền tối */
+    --color-coral-dark: #fe7743;
+    --color-teal: #5fa5c4; /* Brighten xanh biển */
+    --color-navy: #d7d7d7; /* Heading chuyển sang xám nhạt trong dark mode */
+    --color-cream: #334d5e;
 
-    /* States – giữ nguyên hoặc điều chỉnh nhẹ */
-    --color-success: #5cc0b0;
-    --color-info: #80a8c2;
-    --color-warning: #f4a29f;
-    --color-error: #fca5a5;
+    /* States */
+    --color-success: #5fa5c4;
+    --color-info: #5fa5c4;
+    --color-warning: #ff8f66;
+    --color-error: #ff6b6b;
   }
 }
 
@@ -224,8 +227,12 @@
 
   .btn-primary:hover {
     background: var(--color-coral-dark);
-    transform: translateY(-1px);
+    transform: translateY(-2px) scale(1.02);
     box-shadow: 0 6px 20px color-mix(in srgb, var(--color-coral) 40%, transparent);
+  }
+
+  .btn:active {
+    transform: scale(0.97);
   }
 
   .btn-primary:focus-visible {
@@ -261,14 +268,14 @@
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
-    box-shadow: 0 4px 12px rgba(83, 125, 150, 0.08); /* navy nhẹ */
+    box-shadow: 0 8px 24px rgba(39, 63, 79, 0.08); /* navy nhẹ */
     overflow: hidden;
     transition: all 250ms var(--ease-smooth);
   }
 
   .card-base:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(83, 125, 150, 0.12);
+    box-shadow: 0 16px 40px rgba(39, 63, 79, 0.12);
   }
 
   /* Variant cho project card (có thumb hover scale) */
@@ -279,6 +286,22 @@
     box-shadow: 0 4px 12px rgba(83, 125, 150, 0.08);
     overflow: hidden;
     transition: all 250ms var(--ease-smooth);
+  }
+
+  .card-project {
+    position: relative;
+  }
+
+  .project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(39, 63, 79, 0.85), transparent);
+    opacity: 0;
+    transition: 300ms;
+  }
+
+  .card-project:hover .project-overlay {
+    opacity: 1;
   }
 
   .card-project .project-thumb {
@@ -327,10 +350,12 @@
     position: absolute;
     left: 0;
     bottom: -3px;
-    width: 0;
     height: 2px;
     background: var(--color-teal);
-    transition: width 250ms var(--ease-smooth);
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 250ms var(--ease-smooth);
   }
 
   .link-inline:hover,
@@ -354,6 +379,28 @@
   /* ── Container cho sections */
   .container-section {
     @apply mx-auto max-w-6xl px-6 md:px-10 lg:px-12;
+  }
+
+  .glass {
+    background: var(--color-surface-elevated);
+    backdrop-filter: var(--blur-glass);
+    border: 1px solid var(--color-border-soft);
+  }
+
+  .hero-editorial {
+    max-width: 900px;
+  }
+
+  .hero-editorial h1 {
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+
+  .hero-editorial p {
+    max-width: 520px;
+    margin-top: 1.5rem;
+    color: var(--color-text-muted);
   }
 }
 
@@ -470,5 +517,21 @@
       animation: none;
       background: var(--color-surface-2);
     }
+  }
+
+  .hover-lift {
+    transition: all 400ms var(--ease-out-expo);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-6px);
+  }
+
+  .hover-tilt:hover {
+    transform: rotate(-1deg) scale(1.02);
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-coral) 20%, transparent);
   }
 }

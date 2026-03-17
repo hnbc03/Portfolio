@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 
@@ -23,10 +23,9 @@ export class Navbar {
     { label: 'Contact', fragment: 'contact', icon: 'mail' },
   ];
 
-  ngOnInit() {
-    window.addEventListener('scroll', () => {
-      this.isScrolled = window.scrollY > 20;
-    });
+  @HostListener('window:scroll', [])
+  onScroll() {
+    this.isScrolled = window.scrollY > 20;
   }
 
   scrollTo(fragment: string) {
