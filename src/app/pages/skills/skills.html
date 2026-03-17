@@ -1,1 +1,78 @@
-<p>skills works!</p>
+<section
+  id="skills"
+  class="py-24 md:py-32 bg-surface-2 relative overflow-hidden"
+>
+  <div class="container-section">
+    <!-- Heading -->
+    <div class="text-center mb-16">
+      <p class="eyebrow">What I Bring</p>
+      <h2 class="heading-xl text-navy">Skills & Tools</h2>
+      <p class="text-lg text-text-muted mt-4 max-w-3xl mx-auto">
+        Kết hợp giữa mindset UI/UX (empathy + user-focused) và nền tảng code frontend vững chắc từ các dự án trước đây.
+      </p>
+    </div>
+
+    <!-- Core Skills -->
+    <div class="mb-20">
+      <h3 class="heading-lg text-navy text-center mb-10">Core Skills</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        @for (skill of coreSkills; track skill.name) {
+          <div class="card-base p-6 space-y-4 hover:shadow-xl transition-all">
+            <div class="flex items-center gap-4">
+              <!-- Icon placeholder – thay bằng SVG hoặc Google Material Icons -->
+              <span class="text-4xl text-teal material-icons">{{ skill.icon }}</span>
+              <h4 class="text-xl font-medium text-navy">{{ skill.name }}</h4>
+            </div>
+            <!-- Progress bar nhẹ (optional, nếu muốn visual hơn) -->
+            <div class="w-full bg-border-soft rounded-full h-2.5">
+              <div
+                class="bg-teal rounded-full h-2.5 transition-all"
+                [style.width.%]="skill.level"
+              ></div>
+            </div>
+            <p class="text-text-muted text-sm">
+              {{ skill.level }}% • Proficient in applying to real projects
+            </p>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Tools Grid -->
+    <div>
+      <h3 class="heading-lg text-navy text-center mb-10">Tools I Use Daily</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6">
+        @for (tool of tools; track tool.name) {
+          <div class="group flex flex-col items-center text-center p-6 bg-surface rounded-2xl border border-border hover:border-teal hover:shadow-md transition-all hover-scale">
+            <!-- Icon – bạn có thể dùng SVG import hoặc emoji tạm -->
+            <div class="text-5xl mb-4 text-coral group-hover:text-teal transition-colors">
+              <!-- Ví dụ tạm: thay bằng SVG thật -->
+              {{ tool.icon === 'figma-logo' ? '🎨' : tool.icon === 'tailwind-logo' ? '🌬️' : '⚡' }}
+            </div>
+            <p class="font-medium text-text group-hover:text-navy transition-colors">
+              {{ tool.name }}
+            </p>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Optional CTA nhỏ ở cuối -->
+    <div class="text-center mt-16">
+      <p class="text-text-muted mb-6">
+        Luôn sẵn sàng học tool mới để mang lại trải nghiệm tốt hơn cho người dùng.
+      </p>
+      <a
+        routerLink="/"
+        fragment="contact"
+        class="btn btn-primary px-8 py-3 text-base"
+      >
+        Let's Collaborate
+      </a>
+    </div>
+  </div>
+
+  <!-- Decorative blobs nhẹ -->
+  <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-teal/10 rounded-full blur-3xl opacity-60"></div>
+  <div class="absolute -top-20 -right-20 w-80 h-80 bg-coral/5 rounded-full blur-3xl opacity-50"></div>
+</section>
