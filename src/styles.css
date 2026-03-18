@@ -294,6 +294,10 @@
     box-shadow: 0 4px 12px rgba(83, 125, 150, 0.08);
     overflow: hidden;
     transition: all 250ms var(--ease-smooth);
+    display: flex;
+    flex-direction: column;
+    height: 100%;           /* Quan trọng */
+    min-height: 0;
   }
 
   .card-project {
@@ -322,6 +326,11 @@
 
   .card-project:hover .project-thumb img {
     transform: scale(1.06);
+  }
+
+  .grid {
+    /* Nếu grid của bạn chưa có, thêm vào class grid ở section projects */
+    align-content: start;   /* optional, giúp layout ổn định */
   }
 
   /* ── Tag / Skill chips */

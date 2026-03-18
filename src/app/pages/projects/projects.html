@@ -1,7 +1,4 @@
-<section
-  id="projects"
-  class="py-24 md:py-32 bg-gradient-to-b from-surface to-bg relative"
->
+<section id="projects" class="py-24 md:py-32 bg-gradient-to-b from-surface to-bg relative">
   <div class="container-section">
     <!-- Heading -->
     <div class="text-center mb-16">
@@ -20,7 +17,8 @@
           class="px-6 py-2 rounded-full font-medium transition-all"
           [ngClass]="{
             'bg-coral text-white shadow-md': activeFilter() === filter,
-            'bg-surface-2 text-text-muted hover:bg-surface hover:text-navy border border-border': activeFilter() !== filter
+            'bg-surface-2 text-text-muted hover:bg-surface hover:text-navy border border-border':
+              activeFilter() !== filter,
           }"
         >
           {{ filter }}
@@ -31,46 +29,56 @@
     <!-- Projects Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       @for (project of projects(); track project.id) {
-        <div class="card-project group cursor-pointer">
+        <div class="card-project group cursor-pointer flex flex-col h-full">
+          <!-- Phần hình ảnh (giữ nguyên) -->
           <div class="project-thumb bg-white relative overflow-hidden aspect-[4/3] rounded-t-2xl">
             <img
               [src]="project.thumbnail"
               [alt]="project.title"
               class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
+            >
               <p class="text-cream font-medium">View Details →</p>
             </div>
           </div>
 
-          <div class="p-6 space-y-4">
-            <div class="flex justify-between items-start">
-              <h3 class="heading-md text-navy group-hover:text-coral transition-colors">
-                {{ project.title }}
-              </h3>
-              <span class="tag-chip-accent text-sm px-3 py-1">
-                {{ project.category }}
-              </span>
-            </div>
-
-            <p class="text-text-muted line-clamp-3">
-              {{ project.shortDesc }}
-            </p>
-
-            <div class="flex flex-wrap gap-2 pt-2">
-              @for (tag of project.tags; track tag) {
-                <span class="tag-chip text-xs">
-                  {{ tag }}
+          <!-- Phần nội dung text + nút, dùng flex để đẩy nút xuống đáy -->
+          <div class="p-6 flex flex-col flex-grow">
+            <!-- Nội dung sẽ chiếm hết chỗ còn lại -->
+            <div class="flex-grow space-y-4">
+              <div class="flex justify-between items-start gap-4">
+                <h3 class="heading-md text-navy group-hover:text-coral transition-colors">
+                  {{ project.title }}
+                </h3>
+                <span class="tag-chip-accent text-sm px-3 py-1 shrink-0">
+                  {{ project.category }}
                 </span>
-              }
+              </div>
+
+              <p class="text-text-muted line-clamp-3">
+                {{ project.shortDesc }}
+              </p>
+
+              <div class="flex flex-wrap gap-2 pt-2">
+                @for (tag of project.tags; track tag) {
+                  <span class="tag-chip text-xs">
+                    {{ tag }}
+                  </span>
+                }
+              </div>
             </div>
 
-            <a
-              [routerLink]="['/project', project.id]"
-              class="btn btn-primary w-full mt-4 justify-center"
-            >
-              View Case Study
-            </a>
+            <!-- Nút cố định dưới cùng -->
+            <div class="mt-6 pt-2 border-t border-border/30">
+              <a
+                [routerLink]="['/project', project.id]"
+                class="btn btn-primary w-full justify-center"
+              >
+                View Case Study
+              </a>
+            </div>
           </div>
         </div>
       }

@@ -6,11 +6,11 @@ import { ProjectDetail } from './features/project-detail/project-detail';
 export const routes: Routes = [
   {
     path: '',
-    component: Home,           // chứa tất cả sections one-page
+    component: Home,           
     title: 'Portfolio | Huỳnh Ngọc Bảo Châu'
   },
   {
-    path: 'project/:id',                // :id là slug hoặc id của project
+    path: 'project/:id',                
     component: ProjectDetail,
     title: 'Project Detail | Huỳnh Ngọc Bảo Châu'
   },

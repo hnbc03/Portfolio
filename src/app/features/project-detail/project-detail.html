@@ -1,1 +1,154 @@
-<p>project-detail works!</p>
+<section class="min-h-screen bg-bg pt-32 pb-24">
+  <div class="container-section">
+    <!-- Back Button -->
+    <a
+      routerLink="/"
+      fragment="projects"
+      class="inline-flex items-center gap-2 text-text-muted hover:text-coral mb-12 transition-colors"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+      </svg>
+      Back to Projects
+    </a>
+
+    <!-- Hero / Project Header -->
+    <div class="text-center mb-16">
+      <p class="eyebrow text-coral">{{ project?.category }}</p>
+      <h1 class="heading-display text-navy mt-4">
+        {{ project?.title }}
+      </h1>
+      <p class="text-xl text-text-muted mt-6 max-w-3xl mx-auto">
+        {{ project?.shortDesc }}
+      </p>
+
+      <!-- Tags -->
+      <div class="flex flex-wrap justify-center gap-3 mt-8">
+        @for (tag of project?.tags; track tag) {
+          <span class="tag-chip-accent px-4 py-2 text-sm">
+            {{ tag }}
+          </span>
+        }
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-wrap justify-center gap-4 mt-10">
+        @if (project?.figmaUrl) {
+          <a
+            [href]="project?.figmaUrl"
+            target="_blank"
+            class="btn btn-primary px-8 py-4 text-base flex items-center gap-2"
+          >
+            <span>Open in Figma</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        }
+        @if (project?.liveUrl) {
+          <a
+            [href]="project?.liveUrl"
+            target="_blank"
+            class="btn btn-secondary px-8 py-4 text-base"
+          >
+            View Live Demo
+          </a>
+        }
+        @if (project?.githubUrl) {
+          <a
+            [href]="project?.githubUrl"
+            target="_blank"
+            class="btn btn-ghost px-6 py-4 text-base flex items-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+            </svg>
+            View Source
+          </a>
+        }
+      </div>
+    </div>
+
+    <!-- Mockups Carousel / Gallery -->
+    <div class="mb-20">
+      <h3 class="heading-lg text-navy text-center mb-10">Visuals & Mockups</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Thay bằng ảnh thật của bạn, có thể dùng ngFor nếu có nhiều ảnh -->
+        <div class="overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 group">
+          <img
+            src="/assets/images/projects/yumdaily.png"
+            alt="Mockup 1"
+            class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+        </div>
+        <div class="overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 group">
+          <img
+            src="/assets/images/projects/yumdaily.png"
+            alt="Mockup 2"
+            class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+        </div>
+        <!-- Thêm ảnh wireframe, hi-fi, flow nếu có -->
+      </div>
+    </div>
+
+    <!-- Case Study Process -->
+    <div class="space-y-16">
+      <div>
+        <h3 class="heading-lg text-navy mb-6">The Challenge</h3>
+        <p class="text-text-muted text-lg leading-relaxed">
+          [Mô tả vấn đề người dùng gặp phải, ví dụ: Người dùng lớn tuổi gặp khó khăn khi sử dụng app ngân hàng truyền thống...]
+        </p>
+      </div>
+
+      <div>
+        <h3 class="heading-lg text-navy mb-6">Research & Insights</h3>
+        <p class="text-text-muted text-lg leading-relaxed">
+          [User interviews, survey, persona, pain points...]
+        </p>
+        <!-- Có thể thêm ảnh persona hoặc affinity diagram -->
+      </div>
+
+      <div>
+        <h3 class="heading-lg text-navy mb-6">Design Process</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="space-y-4">
+            <p class="text-text-muted">
+              Wireframes → Low-fi → Hi-fi → Interactive Prototype
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-text-muted">
+              <li>Tập trung vào readability & large touch targets</li>
+              <li>Sử dụng tông màu ấm áp, thân thiện</li>
+              <li>Micro-interactions để tăng cảm giác mượt mà</li>
+            </ul>
+          </div>
+          <!-- Thêm ảnh process nếu có -->
+        </div>
+      </div>
+
+      <div>
+        <h3 class="heading-lg text-navy mb-6">Results & Learnings</h3>
+        <p class="text-text-muted text-lg leading-relaxed">
+          [Kết quả: tăng usability score X%, feedback tích cực từ user testing...]
+        </p>
+        <p class="text-teal font-medium mt-6">
+          Dự án này giúp mình hiểu sâu hơn về empathy mapping và iterative design.
+        </p>
+      </div>
+    </div>
+
+    <!-- CTA cuối -->
+    <div class="text-center mt-20 pt-12 border-t border-border">
+      <p class="text-text-muted mb-8">
+        Bạn thấy dự án này thú vị? Hãy liên hệ để mình chia sẻ thêm chi tiết nhé!
+      </p>
+      <a
+        routerLink="/"
+        fragment="contact"
+        class="btn btn-primary px-10 py-4 text-lg"
+      >
+        Let's Talk About Your Project
+      </a>
+    </div>
+  </div>
+</section>
