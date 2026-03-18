@@ -13,6 +13,5 @@ export class About {
   stats = [
     { label: 'Internship', value: '4 months' },
     { label: 'Academic Projects', value: '3+' },
-    { label: 'English', value: 'TOEIC 800+' },
   ];
 }

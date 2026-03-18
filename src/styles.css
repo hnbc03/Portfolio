@@ -207,7 +207,7 @@
   .eyebrow {
     font-size: 0.8125rem; /* 13px */
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--color-coral);
   }
