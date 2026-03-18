@@ -1,4 +1,6 @@
-<footer class="bg-navy text-cream py-12 md:py-16 relative overflow-hidden">
+<footer
+  class="py-12 md:py-16 bg-[var(--color-fixed)] text-white relative overflow-hidden transition-all duration-500"
+>
   <div class="container-section">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
       <!-- Left: Brand & Description -->
@@ -10,40 +12,67 @@
           <span class="text-coral">S</span>ugaringBanana
         </a>
 
-        <p class="text-cream/80 text-sm leading-relaxed max-w-xs">
-          Fresh UI/UX Designer with frontend roots. Crafting warm, intuitive experiences that feel like a cozy coastal afternoon.
+        <p class="text-sm leading-relaxed max-w-xs text-white/80">
+          Fresh UI/UX Designer with frontend roots. Crafting warm, intuitive experiences that feel
+          like a cozy coastal afternoon.
         </p>
 
-        <p class="text-sm text-cream/60">
+        <p class="text-sm text-white/60">
           © {{ currentYear }} sugaringbananaa. All rights reserved.
         </p>
       </div>
 
-      <!-- Center: Quick Links (tùy chọn) -->
+      <!-- Center: Quick Links -->
       <div class="space-y-6 md:text-center">
-        <h4 class="text-lg font-medium text-cream">Quick Navigation</h4>
-        <ul class="space-y-3 text-sm text-cream/80">
+        <h4 class="text-lg font-medium text-white">Quick Navigation</h4>
+
+        <ul class="space-y-3 text-sm">
           <li>
-            <a href="#home" class="hover:text-coral transition-colors">Home</a>
+            <a
+              href="#home"
+              class="text-white/80 hover:text-[var(--color-coral-soft)] transition-colors"
+            >
+              Home
+            </a>
           </li>
           <li>
-            <a href="#about" class="hover:text-coral transition-colors">About</a>
+            <a
+              href="#about"
+              class="text-white/80 hover:text-[var(--color-coral-soft)] transition-colors"
+            >
+              About
+            </a>
           </li>
           <li>
-            <a href="#projects" class="hover:text-coral transition-colors">Projects</a>
+            <a
+              href="#projects"
+              class="text-white/80 hover:text-[var(--color-coral-soft)] transition-colors"
+            >
+              Projects
+            </a>
           </li>
           <li>
-            <a href="#skills" class="hover:text-coral transition-colors">Skills</a>
+            <a
+              href="#skills"
+              class="text-white/80 hover:text-[var(--color-coral-soft)] transition-colors"
+            >
+              Skills
+            </a>
           </li>
           <li>
-            <a href="#contact" class="hover:text-coral transition-colors">Contact</a>
+            <a
+              href="#contact"
+              class="text-white/80 hover:text-[var(--color-coral-soft)] transition-colors"
+            >
+              Contact
+            </a>
           </li>
         </ul>
       </div>
 
       <!-- Right: Social & Back to Top -->
       <div class="space-y-6 md:text-right">
-        <h4 class="text-lg font-medium text-cream">Connect</h4>
+        <h4 class="text-lg font-medium text-white">Connect</h4>
 
         <div class="flex gap-6 md:justify-end">
           @for (link of socialLinks; track link.name) {
@@ -51,7 +80,7 @@
               [href]="link.url"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-2xl text-cream/70 hover:text-coral transition-colors hover-scale"
+              class="text-2xl text-white/70 hover:text-[var(--color-coral-soft)] transition-colors hover-scale"
               aria-label="{{ link.name }}"
             >
               <span class="material-icons">{{ link.icon }}</span>
@@ -62,23 +91,30 @@
         <div class="pt-4">
           <button
             (click)="scrollToTop()"
-            class="btn btn-ghost text-sm flex items-center gap-2 mx-auto md:mx-0"
+            class="btn btn-ghost text-sm flex items-center gap-2 mx-auto md:mx-0 text-white hover:bg-white/10 transition-all"
           >
             Back to Top
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 10l7-7m0 0l7 7m-7-7v18"
+              />
             </svg>
           </button>
         </div>
       </div>
     </div>
 
-    <!-- Made with love line -->
-    <div class="text-center mt-12 pt-8 border-t border-cream/20 text-sm text-cream/60">
-      Made with <span class="text-coral">Angular</span> + <span class="text-teal">TailwindCSS</span> + ❤️ in Ho Chi Minh City
+    <!-- Bottom line -->
+    <div class="text-center mt-12 pt-8 border-t border-white/20 text-sm text-white/60">
+      Made with <span class="text-coral">Angular</span> +
+      <span class="text-teal">TailwindCSS</span> + ❤️ in Ho Chi Minh City
     </div>
   </div>
 
-  <!-- Decorative subtle wave or blob -->
-  <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-navy pointer-events-none"></div>
+  <div
+    class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/10 to-transparent pointer-events-none"
+  ></div>
 </footer>

@@ -10,6 +10,7 @@
   --color-teal: #447d9b; /* Xanh biển trung tính – secondary accent, success, link */
   --color-navy: #273f4f; /* Xanh Navy đậm – heading, text chính, nav active */
   --color-cream: #f8f9fa; /* Xám nhạt – nền nhẹ, off-white, card bg */
+  --color-fixed: #273f4f;
 
   /* Neutrals & Surface */
   --color-bg: #f5f7f8; /* Nền page chính – sáng và sạch sẽ */
@@ -73,6 +74,8 @@
 
   /* ❗ Cream không còn là cream nữa → thành surface nhẹ */
   --color-cream: #162635;
+
+  --color-fixed: #273f4f;
 
   /* States */
   --color-success: #6bbcd6;
