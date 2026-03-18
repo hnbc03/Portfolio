@@ -5,14 +5,13 @@
       <p class="eyebrow">What I Bring</p>
       <h2 class="heading-xl text-navy">Skills & Tools</h2>
       <p class="text-lg text-text-muted mt-4 max-w-3xl mx-auto">
-        Kết hợp giữa mindset UI/UX (empathy + user-focused) và nền tảng code frontend vững chắc từ
-        các dự án trước đây.
+        The tools and skills I rely on to design and build meaningful experiences.
       </p>
     </div>
 
     <!-- Core Skills -->
     <div class="mb-20">
-      <h3 class="heading-lg text-navy text-center mb-10">Core Skills</h3>
+      <h3 class="heading-lg text-navy text-center mb-10">Technical Skills</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         @for (skill of coreSkills; track skill.name) {
           <div
@@ -34,8 +33,8 @@
                 [style.width.%]="skill.level"
               ></div>
             </div>
-            <p class="text-text-muted text-sm">
-              {{ skill.level }}% • Proficient in applying to real projects
+            <p class="text-text-muted text-sm text-center">
+              {{ skill.level }}% • {{ skill.desc}}
             </p>
           </div>
         }
@@ -54,7 +53,6 @@
             <!-- ICON -->
             <div
               class="w-20 h-20 mb-6 flex items-center justify-center rounded-2xl transition-all duration-500 group-hover:scale-110"
-              [style.background]="tool.bg"
             >
               <img [src]="tool.icon" alt="{{ tool.name }}" class="w-12 h-12 object-contain" />
             </div>
