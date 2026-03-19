@@ -4,8 +4,9 @@
 
 @theme {
   /* Palette – Updated with your 4 colors */
-  --color-coral: #FE7743; /* Màu cam chính rực rỡ – button primary, accent */
+  --color-coral: #fe7743; /* Màu cam chính rực rỡ – button primary, accent */
   --color-coral-soft: #f0a64a;
+  --color-coral-soft-2: #FE9EC7;
   --color-coral-dark: #e66a3a; /* Hover version của #FE7743 (tối hơn 10%) */
   --color-teal: #447d9b; /* Xanh biển trung tính – secondary accent, success, link */
   --color-navy: #273f4f; /* Xanh Navy đậm – heading, text chính, nav active */
@@ -64,8 +65,9 @@
   --color-text-subtle: #94a3b8;
 
   /* 🎯 Accent – nổi bật hơn trên nền tối */
-  --color-coral: #FE7743;
+  --color-coral: #fe7743;
   --color-coral-dark: #e66a3a;
+  --color-coral-soft-2: #CD2C58;
 
   --color-teal: #6bbcd6;
 
@@ -166,6 +168,13 @@
     border: none;
     border-top: 1px solid var(--color-border);
     margin: 2rem 0;
+  }
+
+  mark {
+    background-color: var(--color-coral-soft-2);
+    color: var(--color-navy);
+    padding: 0 4px;
+    border-radius: 4px;
   }
 }
 
@@ -296,7 +305,7 @@
     transition: all 250ms var(--ease-smooth);
     display: flex;
     flex-direction: column;
-    height: 100%;           /* Quan trọng */
+    height: 100%; /* Quan trọng */
     min-height: 0;
   }
 
@@ -330,7 +339,7 @@
 
   .grid {
     /* Nếu grid của bạn chưa có, thêm vào class grid ở section projects */
-    align-content: start;   /* optional, giúp layout ổn định */
+    align-content: start; /* optional, giúp layout ổn định */
   }
 
   /* ── Tag / Skill chips */

@@ -1,187 +1,390 @@
-<div class="min-h-screen bg-[var(--color-bg)] pt-32 pb-20">
-  <!-- Back button -->
-  <div class="container-section mb-12">
-    <a
-      routerLink="/"
-      fragment="projects"
-      class="inline-flex items-center gap-2 text-text-muted hover:text-coral mb-12 transition-colors"
-    >
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M10 19l-7-7m0 0l7-7m-7 7h18"
-        />
-      </svg>
-      Back to Projects
-    </a>
-  </div>
-
-  <!-- Hero -->
-  <section class="text-center container-section hero-editorial mb-20">
-    <p class="eyebrow text-coral mx-auto">{{ project.category }}</p>
-    <h1 class="heading-display text-navy mt-4">
-      {{ project.title }}
-    </h1>
-    <p class="text-xl text-text-muted mt-6 max-w-3xl mx-auto">
-      {{ project.shortDesc }}
-    </p>
-
-    <!-- Tags -->
-    <div class="flex flex-wrap justify-center gap-3 mt-8">
-      @for (tag of project.tags; track tag) {
-        <span class="tag-chip-accent px-4 py-2 text-sm">
-          {{ tag }}
-        </span>
-      }
+<!-- src/app/features/yumdaily/yumdaily.component.html -->
+<div class="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)] overflow-x-hidden">
+  <!-- HERO - exactly like your screenshot -->
+  <section class="pt-32 bg-[var(--color-cream)] relative">
+    <div class="container-section">
+      <a
+        routerLink="/"
+        fragment="projects"
+        class="inline-flex items-center gap-2 text-text-muted hover:text-coral mb-12 transition-colors"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+        Back to Projects
+      </a>
     </div>
+    <div class="container-section max-w-5xl mx-auto px-6 text-center">
+      <p class="eyebrow tracking-[0.125em] text-[var(--color-coral)] mb-3">UI/UX</p>
 
-    <!-- CTA Buttons -->
-    <div class="flex flex-wrap justify-center gap-4 mt-10">
-      @if (project.figmaUrl) {
-        <a
-          [href]="project.figmaUrl"
-          target="_blank"
-          class="btn btn-primary px-8 py-4 text-base flex items-center gap-2"
-        >
-          <span>Open in Figma</span>
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-            />
-          </svg>
-        </a>
-      }
-      @if (project.liveUrl) {
-        <a [href]="project.liveUrl" target="_blank" class="btn btn-secondary px-8 py-4 text-base">
-          View Live Demo
-        </a>
-      }
-      @if (project.githubUrl) {
-        <a
-          [href]="project.githubUrl"
-          target="_blank"
-          class="btn btn-ghost px-6 py-4 text-base flex items-center gap-2"
-        >
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
-            />
-          </svg>
-          View Source
-        </a>
-      }
-    </div>
-  </section>
+      <h1 class="heading-display text-[var(--color-navy)] mb-6">YumDaily</h1>
 
-  <!-- Overview -->
-  <section class="container-section space-y-12 mb-24">
-    <div>
-      <h2 class="heading-lg mb-6">Project Overview</h2>
-      <p class="text-[var(--color-text-muted)] mb-6">{{ project.overview?.summary }}</p>
-      <p class="text-[var(--color-text-muted)]">{{ project.overview?.solution }}</p>
-    </div>
-    <div class="space-y-8">
-      <div>
-        <h3 class="font-semibold text-lg mb-2">My Role & Scope</h3>
-        <p class="text-[var(--color-text-muted)]">{{ project.roleScope }}</p>
+      <p class="max-w-xl mx-auto text-lg text-[var(--color-text-muted)] leading-relaxed mb-12">
+        A social network for food lovers to <mark>connect and share recipes</mark>.
+      </p>
+
+      <!-- Tags -->
+      <div class="flex flex-wrap justify-center gap-3 mb-14">
+        <span class="tag-chip">Figma</span>
+        <span class="tag-chip">UX Research</span>
+        <span class="tag-chip">Prototype</span>
+        <span class="tag-chip">Wireframe</span>
+        <span class="tag-chip">Mockup</span>
       </div>
-      <div>
-        <h3 class="font-semibold text-lg mb-2">Timeline</h3>
-        <p class="text-[var(--color-text-muted)]">{{ project.timeline }}</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- Problem Statement -->
-  <section class="container-section mb-24">
-    <h2 class="heading-lg mb-8">Problem Statement</h2>
-    <div class="prose max-w-none text-[var(--color-text-muted)]">
-      <ul class="list-disc pl-6 space-y-3">
-        @for (item of project.problemStatement; track item) {
-          <li>{{ item }}</li>
-        }
-      </ul>
-    </div>
-  </section>
-
-  <!-- Gallery - linh hoạt -->
-  <section class="container-section mb-24">
-    <h2 class="heading-lg mb-10">Design Gallery</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      @for (img of project.gallery; track img.src) {
-        <figure class="group">
-          <div class="overflow-hidden rounded-2xl shadow-xl hover-lift">
-            <img
-              [src]="'assets/images/projects/' + img.src"
-              [alt]="img.alt"
-              class="w-full h-auto transition-transform duration-700 group-hover:scale-105"
-            />
-          </div>
-          <figcaption class="mt-4 text-sm text-[var(--color-text-muted)] text-center">
-            {{ img.caption }}
-          </figcaption>
-        </figure>
-      }
-    </div>
-  </section>
-
-  <!-- Design Process -->
-  <section class="container-section mb-24">
-    <h2 class="heading-lg mb-10">Design Process</h2>
-    @for (step of project.designProcess; track step.title) {
-      <div class="mb-20">
-        <h3 class="heading-md mb-6">{{ step.title }}</h3>
-        <p class="text-[var(--color-text-muted)] mb-8">{{ step.description }}</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" *ngIf="step.images?.length">
-          @for (src of step.images; track src) {
-            <img
-              [src]="'assets/images/projects/' + src"
-              alt=""
-              class="rounded-xl shadow-lg hover-scale"
-            />
-          }
-        </div>
-      </div>
-    }
-  </section>
-
-  <!-- Results -->
-  <section class="container-section mb-24">
-    <h2 class="heading-lg mb-8">Results & Impact</h2>
-    <div class="prose max-w-none text-[var(--color-text-muted)]">
-      @for (item of project.results; track item) {
-        <p>{{ item }}</p>
-      }
-      <ul class="list-disc pl-6 mt-6 space-y-2">
-        @for (m of project.metrics; track m) {
-          <li>{{ m }}</li>
-        }
-      </ul>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="container-section text-center py-20 bg-[var(--color-surface-2)] rounded-3xl">
-    <h2 class="heading-lg mb-6">Interested in working together?</h2>
-    <p class="text-md text-[var(--color-text-muted)] mb-10 max-w-2xl mx-auto">
-      Let's create something amazing. Reach out via email or connect on Facebook.
-    </p>
-    <div class="flex flex-wrap justify-center gap-6">
-      <a routerLink="/" fragment="contact" class="btn btn-primary text-lg px-10 py-4">
-        Get in Touch
+      <!-- CTA Figma -->
+      <a
+        href="https://www.figma.com/proto/nC6K9b5uTbrPKAnFz36DOb/YumDaily?node-id=1620-15959&node-type=frame&viewport=567%2C2418%2C0.08&t=XeqpWHvWFNYuVBpg-0&scaling=contain&content-scaling=fixed&starting-point-node-id=1620%3A15959&show-proto-sidebar=1"
+        target="_blank"
+        class="btn btn-primary text-base px-10 py-4 mr-6 mb-12 ml-6 inline-flex items-center gap-3 group"
+      >
+        Explore Web App
+        <span class="text-xl transition-transform group-hover:rotate-45">↗</span>
       </a>
       <a
-        href="https://facebook.com/chau2605"
+        href="https://www.figma.com/proto/nC6K9b5uTbrPKAnFz36DOb/YumDaily?node-id=1654-12486&node-type=frame&viewport=1760%2C2625%2C0.08&t=XeqpWHvWFNYuVBpg-0&scaling=contain&content-scaling=fixed&starting-point-node-id=1654%3A12486&show-proto-sidebar=1"
         target="_blank"
-        class="btn btn-secondary text-lg px-10 py-4"
+        class="btn btn-primary text-base px-10 py-4 mr-6 mb-12 ml-6 inline-flex items-center gap-3 group"
       >
-        View Facebook
+        Explore Mobile App
+        <span class="text-xl transition-transform group-hover:rotate-45">↗</span>
       </a>
+    </div>
+
+    <!-- Subtle food accent line -->
+    <div
+      class="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-[var(--color-coral)]/30 to-transparent"
+    ></div>
+  </section>
+
+  <!-- PROJECT OVERVIEW -->
+  <section class="bg-surface-2 py-20 w-screen relative left-1/2 -ml-[50vw]">
+    <div class="container-section max-w-5xl mx-auto px-6 py-20">
+      <div class="grid md:grid-cols-12 gap-16 items-center">
+        <!-- Left text -->
+        <div class="md:col-span-7">
+          <p class="eyebrow mb-4">OVERVIEW</p>
+          <h2 class="heading-lg text-[var(--color-navy)] mb-6">
+            A dedicated space for sharing and discovering recipes.
+          </h2>
+          <p class="text-[var(--color-text-muted)] text-lg leading-relaxed mb-8">
+            YumDaily is a team-based academic project that explores how recipe content often gets
+            lost in general social media feeds, making it difficult to organize and revisit.
+          </p>
+          <p class="text-[var(--color-text-muted)] text-lg leading-relaxed mb-8">
+            We designed YumDaily as a dedicated social platform with a warm, intuitive experience,
+            making it easier to create, share, and discover recipes.
+          </p>
+          <div class="flex flex-wrap gap-8 text-sm">
+            <div>
+              <p class="text-[var(--color-text-muted)]">MY ROLE</p>
+              <p class="font-medium"><mark>UI/UX Designer (Team of 5)</mark></p>
+            </div>
+            <div>
+              <p class="text-[var(--color-text-muted)]">SCOPE</p>
+              <p class="font-medium">
+                Contributed to the <mark>full UI/UX design process</mark>, including UX research,
+                wireframing, mockup, prototyping, and usability testing across both web and mobile
+                platforms. Collaborated closely with team members to ensure consistency and refine
+                the overall user experience.
+              </p>
+            </div>
+            <div>
+              <p class="text-[var(--color-text-muted)]">TIMELINE</p>
+              <p class="font-medium">7 weeks | October – November 2024</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right visual -->
+        <div class="md:col-span-5 flex justify-center">
+          <div
+            class="max-w-[300px] w-full bg-[var(--color-surface)] rounded-3xl overflow-hidden shadow-2xl"
+          >
+            <img
+              src="/assets/images/projects/mobile-home.png"
+              alt="Mobile - Feed"
+              class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM STATEMENT -->
+  <section class="bg-[var(--color-surface)] py-20">
+    <div class="container-section max-w-4xl mx-auto px-6">
+      <div class="max-w-2xl">
+        <p class="eyebrow mb-4">THE CHALLENGE</p>
+        <h2 class="heading-lg text-[var(--color-navy)] mb-8">
+          Why create another social platform?
+        </h2>
+        <div class="prose text-[var(--color-text-muted)] text-lg space-y-6">
+          <p>
+            Food lovers like us
+            <mark>scatter their recipes across screenshots, bookmarks, and notes apps</mark>
+            because existing platforms don't offer a dedicated space for culinary content. Recipe
+            posts get buried in general social feeds, and there's no easy way to organize, revisit,
+            or share them with a like-minded community.
+          </p>
+          <p>
+            As a student team, we wanted to prove we could
+            <mark>identify a real user need and follow a full design process</mark>
+            to address it—not just create something that looks pretty. The goal was to deliver a
+            cross-platform experience with a warm, user-centered feel.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HYPOTHESIS -->
+  <section class="bg-surface-2 py-20 w-screen relative left-1/2 -ml-[50vw]">
+    <div class="container-section max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16">
+        <div>
+          <p class="eyebrow mb-4">HYPOTHESIS</p>
+          <h3 class="heading-md mb-6">
+            If we create a warm, community-focused space for recipe sharing…
+          </h3>
+          <p class="text-[var(--color-text-muted)] text-lg">
+            …users will move beyond passive scrolling and actively engage - <mark>sharing their own recipes</mark>,
+            commenting on others' posts, and <mark>building connections around food</mark>. We believed that a
+            dedicated platform with the right social features could turn isolated home cooks into a
+            thriving culinary community.
+          </p>
+        </div>
+        <div class="bg-[var(--color-surface-2)] p-8 rounded-3xl">
+          <h4 class="text-sm font-semibold text-[var(--color-coral)] uppercase tracking-wider mb-4">
+            Goals
+          </h4>
+          <ul class="space-y-6 text-sm">
+            <li class="flex gap-4">
+              <span class="text-[var(--color-coral)] font-mono">01</span>
+              <div>Structured recipe creation with clear steps and ingredients</div>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-[var(--color-coral)] font-mono">02</span>
+              <div>Discover new recipes based on personal taste and dietary preferences</div>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-[var(--color-coral)] font-mono">03</span>
+              <div>Community-driven interactions through sharing, commenting, and messaging</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIGN PROCESS - the meat -->
+  <section class="py-20 bg-[var(--color-cream)]">
+    <div class="container-section max-w-5xl mx-auto px-6">
+      <p class="eyebrow text-center mb-3">DESIGN PROCESS</p>
+      <h2 class="heading-lg text-center text-[var(--color-navy)] mb-16">
+        From 183 survey answers to a living kitchen community
+      </h2>
+
+      <!-- Step 1: Research -->
+      <div class="grid md:grid-cols-12 gap-12 items-center mb-28">
+        <div class="md:col-span-5">
+          <div class="sticky top-28">
+            <div
+              class="inline-flex items-center gap-2 bg-white px-5 py-2 rounded-3xl text-xs font-medium mb-6"
+            >
+              <span class="w-2 h-2 rounded-full bg-[var(--color-coral)] animate-pulse"></span>
+              STEP 01 — RESEARCH
+            </div>
+            <h3 class="heading-md mb-4">183 foodies spoke. I listened.</h3>
+            <p class="text-[var(--color-text-muted)]">
+              Google Form survey → affinity mapping → 3 user personas. Biggest insight: people don’t
+              want another recipe database. They want a friend who cooks.
+            </p>
+          </div>
+        </div>
+        <div class="md:col-span-7">
+          <img
+            src="https://picsum.photos/id/1015/1200/720"
+            alt="User research affinity map"
+            class="rounded-3xl shadow-2xl hover-lift"
+          />
+          <p class="text-center text-xs text-[var(--color-text-muted)] mt-4">
+            Affinity map + survey highlights
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 2: Wireframes -->
+      <div class="grid md:grid-cols-12 gap-12 items-center mb-28">
+        <div class="md:col-span-7 order-2 md:order-1">
+          <img
+            src="https://picsum.photos/id/160/1200/720"
+            alt="Low-fidelity wireframes"
+            class="rounded-3xl shadow-2xl hover-lift"
+          />
+        </div>
+        <div class="md:col-span-5 order-1 md:order-2">
+          <div
+            class="inline-flex items-center gap-2 bg-white px-5 py-2 rounded-3xl text-xs font-medium mb-6"
+          >
+            STEP 02 — WIREFRAMES
+          </div>
+          <h3 class="heading-md mb-4">Started messy. Got focused.</h3>
+          <p class="text-[var(--color-text-muted)]">
+            40+ low-fi screens in Figma. Tested 5 flows with 12 friends. The “Fridge Scan → Recipe”
+            flow reduced decision time by 65% in testing.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 3: Design System + Mockups -->
+      <div class="grid md:grid-cols-12 gap-12 items-center">
+        <div class="md:col-span-5">
+          <div
+            class="inline-flex items-center gap-2 bg-white px-5 py-2 rounded-3xl text-xs font-medium mb-6"
+          >
+            STEP 03 — DESIGN SYSTEM
+          </div>
+          <h3 class="heading-md mb-4">A warm, appetite-inducing system</h3>
+          <p class="text-[var(--color-text-muted)]">
+            Logo + 8 custom icons + typography (Playfair Display for headings, Plus Jakarta for
+            body). Warm coral accent (#FE7743) to trigger hunger. Glass-morphism cards for that
+            “fresh ingredient” feel.
+          </p>
+        </div>
+        <div class="md:col-span-7">
+          <div class="grid grid-cols-2 gap-6">
+            <img
+              src="https://picsum.photos/id/201/600/800"
+              alt="Design system"
+              class="rounded-3xl shadow-xl hover-lift"
+            />
+            <img
+              src="https://picsum.photos/id/251/600/800"
+              alt="Mobile home feed"
+              class="rounded-3xl shadow-xl hover-lift"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY SCREENS GALLERY -->
+  <section class="py-20 bg-[var(--color-surface)]">
+    <div class="container-section max-w-6xl mx-auto px-6">
+      <h2 class="heading-lg text-center mb-12">15 screens. Zero boredom.</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="card-project group">
+          <div class="project-thumb aspect-video overflow-hidden">
+            <img
+              src="https://picsum.photos/id/29/800/600"
+              alt="Home feed"
+              class="w-full group-hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          <div class="p-6">
+            <p class="font-medium mb-1">Home Feed</p>
+            <p class="text-xs text-[var(--color-text-muted)]">
+              Fridge-based recommendations + trending dishes
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-project group">
+          <div class="project-thumb aspect-video overflow-hidden">
+            <img
+              src="https://picsum.photos/id/30/800/600"
+              alt="Recipe Creator"
+              class="w-full group-hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          <div class="p-6">
+            <p class="font-medium mb-1">Recipe Creator</p>
+            <p class="text-xs text-[var(--color-text-muted)]">
+              Step-by-step editor with live collaboration
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card-project group">
+          <div class="project-thumb aspect-video overflow-hidden">
+            <img
+              src="https://picsum.photos/id/31/800/600"
+              alt="Live Cooking Room"
+              class="w-full group-hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          <div class="p-6">
+            <p class="font-medium mb-1">Live Cooking Room</p>
+            <p class="text-xs text-[var(--color-text-muted)]">
+              Video + chat while cooking together
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULT -->
+  <section class="container-section max-w-4xl mx-auto px-6 py-24">
+    <div class="text-center">
+      <p class="eyebrow mb-6">THE OUTCOME</p>
+      <h2 class="heading-display text-[var(--color-navy)] mb-8">
+        A prototype that already feels alive
+      </h2>
+
+      <div class="inline-flex gap-16 text-left">
+        <div>
+          <div class="text-6xl font-semibold text-[var(--color-coral)]">92%</div>
+          <p class="text-sm text-[var(--color-text-muted)]">
+            Task success rate in usability testing
+          </p>
+        </div>
+        <div>
+          <div class="text-6xl font-semibold text-[var(--color-coral)]">4.8s</div>
+          <p class="text-sm text-[var(--color-text-muted)]">
+            Average time to find a recipe (down from 38s)
+          </p>
+        </div>
+      </div>
+
+      <p class="max-w-md mx-auto mt-12 text-[var(--color-text-muted)]">
+        If launched, I’d track MAU, recipe shares per user, and session time. Early signals show
+        this could become the “Instagram for home cooks”.
+      </p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="bg-[var(--color-navy)] text-white py-20">
+    <div class="container-section max-w-3xl mx-auto px-6 text-center">
+      <h3 class="heading-lg mb-6">Ready to taste the next chapter?</h3>
+      <p class="text-[var(--color-teal)] mb-12">Let’s cook something delicious together.</p>
+
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <a
+          routerLink="/projects"
+          class="btn btn-secondary text-white border-white hover:bg-white hover:text-[var(--color-navy)] px-12"
+        >
+          See all projects
+        </a>
+        <a href="mailto:hnbc.chau@gmail.com" class="btn btn-primary px-12"> Let’s talk </a>
+      </div>
+
+      <p class="text-xs text-[var(--color-teal)]/70 mt-12">
+        Prototypes available on Figma • Open for freelance &amp; full-time opportunities
+      </p>
     </div>
   </section>
 </div>
