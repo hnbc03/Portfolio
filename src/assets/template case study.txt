@@ -1,0 +1,22 @@
+Project Title
+- Your project title should be concise. Include the client or company name in subtext.
+
+Project Overview
+- Project Summary: Give a brief summary of what your project is about without getting too much info details. Give context around the problem space (1-2 sentences) and share how your designs resolved this problem (1-2 sentences).
+- Your Role, Scope, Timeline: What were your responsibilities as a designer on this project? (1-2 sentences). When did you work on this project and for how long? (1 sentences).
+
+Problem Statement
+- What are the user problem that exist within the current design?
+- Are they any business problem that you were solving for?
+
+Hypothesis Statement
+- What are the user goals?
+- What are they trying to archieve?
+- Are there any business goals?
+- Are there any product goals?
+
+Design Process
+- This section is the meat of you portfolio. Show how you started chipping away at the problem with your initial explorations (going broad), and how you narrowed down your design iterations with insights form UX research or feedback from the team. This is where you can really build excitement and delight by presenting captivating visuals and prototypes. If you have multiple features that relate back to the problem, write out this design process section for each of the features.
+
+Result
+- How did your design solutions impact the business? Write any success metrisc that relate to your problem statement. Even if your design didn't ship, it's important to mention hypothetical metrics you would pay attention to because it shows you understand the importance of driving impact and outcomes.

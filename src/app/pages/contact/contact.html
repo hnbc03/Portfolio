@@ -6,11 +6,10 @@
     <!-- Heading -->
     <div class="text-center mb-16">
       <p class="eyebrow">Get in Touch</p>
-      <h2 class="heading-xl text-navy">
-        Let's Create Something Beautiful Together
-      </h2>
+      <h2 class="heading-xl text-navy">Let's Create Something Beautiful Together</h2>
       <p class="text-lg text-text-muted mt-4 max-w-2xl mx-auto">
-        Mình luôn mở lòng cho các cơ hội hợp tác, feedback, hoặc chỉ đơn giản là trò chuyện về design và code. Hãy liên hệ nhé!
+        I'm always open to job opportunities, feedback, or just a good conversation about design and
+        code. Feel free to reach out!
       </p>
     </div>
 
@@ -28,11 +27,16 @@
               formControlName="name"
               class="w-full px-4 py-3 rounded-lg border border-border focus:border-teal focus:ring-2 focus:ring-teal/30 outline-none transition-all bg-surface"
               [ngClass]="{
-                'border-error': contactForm.get('name')?.touched && contactForm.get('name')?.invalid
+                'border-error':
+                  contactForm.get('name')?.touched && contactForm.get('name')?.invalid,
               }"
-              placeholder="Sugaring Banana"
             />
-            <p *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.hasError('required')" class="text-error text-sm mt-1">
+            <p
+              *ngIf="
+                contactForm.get('name')?.touched && contactForm.get('name')?.hasError('required')
+              "
+              class="text-error text-sm mt-1"
+            >
               Please enter your name
             </p>
           </div>
@@ -47,14 +51,24 @@
               formControlName="email"
               class="w-full px-4 py-3 rounded-lg border border-border focus:border-teal focus:ring-2 focus:ring-teal/30 outline-none transition-all bg-surface"
               [ngClass]="{
-                'border-error': contactForm.get('email')?.touched && contactForm.get('email')?.invalid
+                'border-error':
+                  contactForm.get('email')?.touched && contactForm.get('email')?.invalid,
               }"
-              placeholder="hello@sugaringbanana.com"
             />
-            <p *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.hasError('required')" class="text-error text-sm mt-1">
+            <p
+              *ngIf="
+                contactForm.get('email')?.touched && contactForm.get('email')?.hasError('required')
+              "
+              class="text-error text-sm mt-1"
+            >
               Please enter your email
             </p>
-            <p *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.hasError('email')" class="text-error text-sm mt-1">
+            <p
+              *ngIf="
+                contactForm.get('email')?.touched && contactForm.get('email')?.hasError('email')
+              "
+              class="text-error text-sm mt-1"
+            >
               Please enter a valid email
             </p>
           </div>
@@ -69,11 +83,17 @@
               rows="5"
               class="w-full px-4 py-3 rounded-lg border border-border focus:border-teal focus:ring-2 focus:ring-teal/30 outline-none transition-all bg-surface resize-none"
               [ngClass]="{
-                'border-error': contactForm.get('message')?.touched && contactForm.get('message')?.invalid
+                'border-error':
+                  contactForm.get('message')?.touched && contactForm.get('message')?.invalid,
               }"
-              placeholder="Hi! I saw your portfolio and would love to discuss..."
             ></textarea>
-            <p *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.hasError('required')" class="text-error text-sm mt-1">
+            <p
+              *ngIf="
+                contactForm.get('message')?.touched &&
+                contactForm.get('message')?.hasError('required')
+              "
+              class="text-error text-sm mt-1"
+            >
               Please write a message
             </p>
           </div>
@@ -86,8 +106,19 @@
             <span *ngIf="!isSubmitting">Send Message</span>
             <span *ngIf="isSubmitting" class="flex items-center justify-center gap-2">
               <svg class="animate-spin h-5 w-5" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                <circle
+                  class="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  stroke-width="4"
+                ></circle>
+                <path
+                  class="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                ></path>
               </svg>
               Sending...
             </span>
@@ -95,11 +126,17 @@
         </form>
 
         <!-- Success / Error message -->
-        <div *ngIf="submitSuccess" class="mt-6 p-4 bg-teal/10 border border-teal rounded-lg text-teal text-center">
-          Thank you! Your message has been sent. Mình sẽ phản hồi sớm nhất có thể nhé 🌊
+        <div
+          *ngIf="submitSuccess"
+          class="mt-6 p-4 bg-teal/10 border border-teal rounded-lg text-teal text-center"
+        >
+          Thank you! Your message has been sent. I'll respond as soon as possible. 🌊
         </div>
-        <div *ngIf="submitError" class="mt-6 p-4 bg-error/10 border border-error rounded-lg text-error text-center">
-          Có lỗi xảy ra. Vui lòng thử lại hoặc gửi trực tiếp qua email.
+        <div
+          *ngIf="submitError"
+          class="mt-6 p-4 bg-error/10 border border-error rounded-lg text-error text-center"
+        >
+          An error occurred. Please try again or send it directly via email.
         </div>
       </div>
 
@@ -109,28 +146,31 @@
           <h3 class="heading-md text-navy mb-6">Quick Ways to Reach Me</h3>
           <div class="space-y-6">
             <div class="flex items-start gap-4">
-              <span class="text-3xl text-teal material-icons">email</span>
+              <img src="/assets/images/logos/gmail.png" alt="Gmail" class="w-8 h-8 inline-block" />
               <div>
                 <p class="font-medium text-text">Email</p>
-                <a href="mailto:hello@sugaringbanana.com" class="text-teal hover:text-coral transition-colors">
-                  hello@sugaringbanana.com
+                <a
+                  href="mailto:hnbc.career@gmail.com"
+                  class="text-teal hover:text-coral transition-colors"
+                >
+                  hnbc.career@gmail.com
                 </a>
               </div>
             </div>
 
             <div class="flex items-start gap-4">
-              <span class="text-3xl text-teal material-icons">location_on</span>
+              <img src="/assets/images/icons/map.png" alt="Location" class="w-8 h-8 inline-block" />
               <div>
-                <p class="font-medium text-text">Based in</p>
-                <p class="text-text-muted">Ho Chi Minh City, Vietnam</p>
+                <p class="font-medium text-text">Location</p>
+                <p class="text-text-muted">Binh Thanh, Ho Chi Minh City, Vietnam</p>
               </div>
             </div>
 
             <div class="flex items-start gap-4">
-              <span class="text-3xl text-teal material-icons">language</span>
+              <img src="/assets/images/icons/phone.png" alt="Phone" class="w-8 h-8 inline-block" />
               <div>
-                <p class="font-medium text-text">English</p>
-                <p class="text-text-muted">TOEIC RL: [điểm của bạn] • Comfortable in professional settings</p>
+                <p class="font-medium text-text">Phone</p>
+                <p class="text-text-muted">+84 853 633 779</p>
               </div>
             </div>
           </div>
@@ -140,33 +180,40 @@
         <div>
           <h4 class="text-lg font-medium text-navy mb-4">Find me on</h4>
           <div class="flex gap-6">
-            <a href="https://linkedin.com/in/sugaringbananaa" target="_blank" class="text-3xl text-text-muted hover:text-coral transition-colors">
-              <span class="material-icons">linkedin</span> <!-- hoặc dùng SVG -->
+            <a
+              href="https://www.linkedin.com/in/châu-huỳnh-129514277/"
+              target="_blank"
+              class="text-3xl text-text-muted hover:text-coral transition-colors"
+            >
+              <img
+                src="/assets/images/logos/linkedin.png"
+                alt="Linkedin"
+                class="w-12 h-12 inline-block"
+              />
             </a>
-            <a href="https://behance.net/sugaringbananaa" target="_blank" class="text-3xl text-text-muted hover:text-coral transition-colors">
-              <span class="material-icons">brush</span>
+            <a
+              href="https://www.facebook.com/chau2605/"
+              target="_blank"
+              class="text-3xl text-text-muted hover:text-coral transition-colors"
+            >
+              <img src="/assets/images/logos/facebook.png" alt="Facebook" class="w-12 h-12 inline-block" />
             </a>
-            <a href="https://github.com/sugaringbananaa" target="_blank" class="text-3xl text-text-muted hover:text-coral transition-colors">
-              <span class="material-icons">code</span>
+            <a
+              href="https://github.com/hnbc03"
+              target="_blank"
+              class="text-3xl text-text-muted hover:text-coral transition-colors"
+            >
+              <img src="/assets/images/logos/github.png" alt="Github" class="w-12 h-12 inline-block" />
             </a>
-            <!-- Thêm X nếu có -->
           </div>
-        </div>
-
-        <!-- Optional Calendly or booking -->
-        <div class="pt-6">
-          <a
-            href="https://calendly.com/sugaringbananaa/30min"
-            target="_blank"
-            class="btn btn-secondary w-full md:w-auto px-8 py-3 text-center block"
-          >
-            Schedule a Quick Call
-          </a>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Decorative elements cuối cùng -->
-  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-coral/5 to-transparent pointer-events-none"></div>
+  <div
+    class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-coral/5 to-transparent pointer-events-none"
+  ></div>
 </section>
+<Script></Script>

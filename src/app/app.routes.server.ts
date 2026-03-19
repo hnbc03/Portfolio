@@ -5,10 +5,9 @@ export const serverRoutes: ServerRoute[] = [
     path: '',
     renderMode: RenderMode.Prerender
   },
-  {
-    path: 'project/:id',
-    renderMode: RenderMode.Client
-  },
+  { path: 'projects/yumdaily', renderMode: RenderMode.Client },
+  { path: 'projects/weatherr', renderMode: RenderMode.Client },
+  { path: 'projects/instaweb', renderMode: RenderMode.Client },
   {
     path: '**',
     renderMode: RenderMode.Prerender

@@ -9,17 +9,14 @@
           href="#home"
           class="flex items-center gap-2 text-2xl font-display font-semibold tracking-tight"
         >
-          <span class="text-coral">S</span>ugaringBanana
+          <span class="text-white">HNBC</span>
         </a>
 
         <p class="text-sm leading-relaxed max-w-xs text-white/80">
-          Fresh UI/UX Designer with frontend roots. Crafting warm, intuitive experiences that feel
-          like a cozy coastal afternoon.
+          Fresh UI/UX Designer with frontend roots. Where technical logic meets creative design.
         </p>
 
-        <p class="text-sm text-white/60">
-          © {{ currentYear }} sugaringbananaa. All rights reserved.
-        </p>
+        <p class="text-sm text-white/60">© {{ currentYear }} HNBC. All rights reserved.</p>
       </div>
 
       <!-- Center: Quick Links -->
@@ -83,7 +80,11 @@
               class="text-2xl text-white/70 hover:text-[var(--color-coral-soft)] transition-colors hover-scale"
               aria-label="{{ link.name }}"
             >
-              <span class="material-icons">{{ link.icon }}</span>
+              <img
+                [src]="link.icon"
+                [alt]="link.name"
+                class="w-6 h-6 opacity-90 hover:opacity-100 transition"
+              />
             </a>
           }
         </div>

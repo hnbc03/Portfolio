@@ -1,0 +1,158 @@
+<div class="min-h-screen bg-[var(--color-bg)] pt-32 pb-20">
+  <!-- Back button -->
+  <div class="container-section mb-12">
+    <a
+      routerLink="/"
+      fragment="projects"
+      class="inline-flex items-center gap-2 text-text-muted hover:text-coral mb-12 transition-colors"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 19l-7-7m0 0l7-7m-7 7h18"
+        />
+      </svg>
+      Back to Projects
+    </a>
+  </div>
+
+  <!-- Hero -->
+  <section class="text-center container-section hero-editorial mb-20">
+    <p class="eyebrow text-coral mx-auto">{{ project.category }}</p>
+    <h1 class="heading-display text-navy mt-4">
+      {{ project.title }}
+    </h1>
+    <p class="text-xl text-text-muted mt-6 max-w-3xl mx-auto">
+      {{ project.shortDesc }}
+    </p>
+
+    <!-- Tags -->
+    <div class="flex flex-wrap justify-center gap-3 mt-8">
+      @for (tag of project.tags; track tag) {
+        <span class="tag-chip-accent px-4 py-2 text-sm">
+          {{ tag }}
+        </span>
+      }
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mt-10">
+      @if (project.githubUrl) {
+        <a
+          [href]="project.githubUrl"
+          target="_blank"
+          class="btn btn-primary px-8 py-4 text-base flex items-center gap-2"
+        >
+          <span>View Source Code</span>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+            />
+          </svg>
+        </a>
+      }
+      @if (project.liveUrl) {
+        <a [href]="project.liveUrl" target="_blank" class="btn btn-secondary px-8 py-4 text-base">
+          View Live Demo
+        </a>
+      }
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="container-section space-y-12 mb-24">
+    <div>
+      <h2 class="heading-lg mb-6">Project Overview</h2>
+      <p class="text-[var(--color-text-muted)] mb-6">{{ project.overview?.summary }}</p>
+      <p class="text-[var(--color-text-muted)]">{{ project.overview?.solution }}</p>
+    </div>
+    <div class="space-y-8">
+      <div>
+        <h3 class="font-semibold text-lg mb-2">My Role & Scope</h3>
+        <p class="text-[var(--color-text-muted)]">{{ project.roleScope }}</p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-lg mb-2">Timeline</h3>
+        <p class="text-[var(--color-text-muted)]">{{ project.timeline }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Development Process -->
+  <section class="container-section mb-24">
+    <h2 class="heading-lg mb-8">Development Process & Key Decisions</h2>
+    <div class="prose max-w-none text-[var(--color-text-muted)] space-y-8">
+      @for (section of project.technicalSections; track section.title) {
+        <div>
+          <h3 class="heading-md mb-4 text-navy">{{ section.title }}</h3>
+          <p class="mb-6">{{ section.content }}</p>
+
+          @if (section.images?.length) {
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+              @for (src of section.images; track src) {
+                <img
+                  [src]="'assets/images/projects/' + src"
+                  alt=""
+                  class="rounded-xl shadow-lg hover-scale w-full"
+                />
+              }
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="container-section mb-24">
+    <h2 class="heading-lg mb-10">Gallery & Screenshots</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      @for (img of project.gallery; track img.src) {
+        <figure class="group">
+          <div class="overflow-hidden rounded-2xl shadow-xl hover-lift">
+            <img
+              [src]="'assets/images/projects/' + img.src"
+              [alt]="img.alt"
+              class="w-full h-auto transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+          <figcaption class="mt-4 text-sm text-[var(--color-text-muted)] text-center">
+            {{ img.caption }}
+          </figcaption>
+        </figure>
+      }
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="container-section mb-24">
+    <h2 class="heading-lg mb-8">Results & Learnings</h2>
+    <div class="prose max-w-none text-[var(--color-text-muted)]">
+      @for (item of project.results; track item) {
+        <p>{{ item }}</p>
+      }
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="container-section text-center py-20 bg-[var(--color-surface-2)] rounded-3xl">
+    <h2 class="heading-lg mb-6">Interested in working together?</h2>
+    <p class="text-md text-[var(--color-text-muted)] mb-10 max-w-2xl mx-auto">
+      Let's create something amazing. Reach out via email or connect on Facebook.
+    </p>
+    <div class="flex flex-wrap justify-center gap-6">
+      <a routerLink="/" fragment="contact" class="btn btn-primary text-lg px-10 py-4">
+        Get in Touch
+      </a>
+      <a
+        href="https://facebook.com/chau2605"
+        target="_blank"
+        class="btn btn-secondary text-lg px-10 py-4"
+      >
+        View Facebook
+      </a>
+    </div>
+  </section>
+</div>

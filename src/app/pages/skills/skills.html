@@ -33,9 +33,7 @@
                 [style.width.%]="skill.level"
               ></div>
             </div>
-            <p class="text-text-muted text-sm text-center">
-              {{ skill.level }}% • {{ skill.desc}}
-            </p>
+            <p class="text-text-muted text-sm text-center">{{ skill.level }}% • {{ skill.desc }}</p>
           </div>
         }
       </div>
@@ -43,9 +41,9 @@
 
     <!-- Tools Grid -->
     <div class="mt-10">
-      <h3 class="heading-lg text-navy text-center mb-10">Tools I Use Daily</h3>
+      <h3 class="heading-lg text-navy text-center mb-10">Tools</h3>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
         @for (tool of tools; track tool.name) {
           <div
             class="group relative p-8 flex flex-col items-center text-center h-full bg-surface rounded-3xl border border-border transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_30px_60px_-10px_rgba(0,0,0,0.15)]"
@@ -80,13 +78,17 @@
     <div class="mt-20">
       <h3 class="heading-lg text-navy text-center mb-10">Soft Skills</h3>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
         @for (skill of softSkills; track skill.name) {
           <div
             class="group p-8 flex flex-col items-center text-center bg-surface rounded-3xl border border-border transition-all duration-500 ease-out hover:-translate-y-3 hover:scale-[1.03] hover:shadow-[0_30px_60px_-10px_rgba(236,143,141,0.25)]"
           >
             <!-- ICON -->
-            <div class="text-4xl mb-6 text-teal">💡</div>
+            <img
+              [src]="skill.icon"
+              alt="{{ skill.name }}"
+              class="w-12 h-12 object-contain transition-all duration-300 group-hover:scale-110 mb-6"
+            />
 
             <!-- TITLE -->
             <h4 class="text-xl font-semibold text-navy mb-3">
@@ -105,11 +107,8 @@
     <!-- Optional CTA nhỏ ở cuối -->
     <div class="text-center mt-16">
       <p class="text-text-muted mb-6">
-        Luôn sẵn sàng học tool mới để mang lại trải nghiệm tốt hơn cho người dùng.
+        Always eager to learn and explore new tools and skills to improve the user experience.
       </p>
-      <a routerLink="/" fragment="contact" class="btn btn-primary px-8 py-3 text-base">
-        Let's Collaborate
-      </a>
     </div>
   </div>
 

@@ -10,9 +10,12 @@
       <!-- Avatar -->
       <div class="relative flex justify-center">
         <div
-          class="relative w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden shadow-2xl border border-border hover:scale-105 transition-all duration-500">
-          <img src="/assets/images/profile/avatar.png"
-            class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
+          class="relative w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden shadow-2xl border border-border hover:scale-105 transition-all duration-500"
+        >
+          <img
+            src="/assets/images/profile/avatar2.jpg"
+            class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+          />
           <div class="absolute inset-0 bg-gradient-to-tr from-teal/10 to-coral/10"></div>
         </div>
 
@@ -53,20 +56,26 @@
       <!-- Timeline / Key Milestones -->
 
       <div class="relative max-w-5xl mx-auto pt-24 mt-8 md:mt-12">
-        <!-- Floating Cards Container -->
+        <!-- Floating Cards Container – chỉ dùng flex-col đơn giản -->
         <div class="flex flex-col items-center gap-16 md:gap-20">
-          <!-- Hàng trên: Bọc 2 thẻ Education + Languages -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-20 w-full max-w-4xl justify-items-center">
-            <!-- Education -->
-            <div class="relative group w-full max-w-md">
+          <!-- Card 1: Education -->
+          <div class="w-full max-w-3xl">
+            <div class="relative group">
               <div
-                class="card-floating bg-surface border border-border/50 rounded-3xl p-8 md:p-10 shadow-2xl hover:shadow-[0_30px_60px_-15px_rgba(68,161,148,0.3)] transition-all duration-500 hover:-translate-y-6 hover:scale-[1.03] backdrop-blur-sm h-full">
+                class="card-floating bg-surface border border-border/50 rounded-3xl p-8 md:p-10 shadow-2xl hover:shadow-[0_30px_60px_-15px_rgba(68,161,148,0.3)] transition-all duration-500 hover:-translate-y-6 hover:scale-[1.03] backdrop-blur-sm"
+              >
                 <div class="absolute -top-16 left-1/2 transform -translate-x-1/2">
                   <div
-                    class="w-28 h-28 rounded-full bg-white flex items-center justify-center shadow-xl border border-border/30">
-                    <img src="/assets/images/logos/uit-logo.png" class="w-20 h-20 object-contain" alt="UIT" />
+                    class="w-28 h-28 rounded-full bg-white flex items-center justify-center shadow-xl border border-border/30"
+                  >
+                    <img
+                      src="/assets/images/logos/uit-logo.png"
+                      class="w-20 h-20 object-contain"
+                      alt="UIT"
+                    />
                   </div>
                 </div>
+
                 <div class="mt-16 text-center space-y-4">
                   <h3 class="heading-lg text-navy">Education</h3>
                   <p class="font-medium text-text">
@@ -80,44 +89,23 @@
                 </div>
               </div>
             </div>
-
-            <!-- Languages -->
-            <div class="relative group w-full max-w-md">
-              <div
-                class="card-floating bg-surface border border-border/50 rounded-3xl p-8 md:p-10 shadow-2xl hover:shadow-[0_30px_60px_-15px_rgba(236,143,141,0.3)] transition-all duration-500 hover:-translate-y-6 hover:scale-[1.03] backdrop-blur-sm h-full">
-                <div class="absolute -top-16 left-1/2 transform -translate-x-1/2">
-                  <div
-                    class="w-28 h-28 rounded-full bg-white flex items-center justify-center shadow-xl border border-border/30">
-                    <img src="/assets/images/logos/toeic-logo.png" class="w-20 h-20 object-contain" alt="TOEIC" />
-                  </div>
-                </div>
-                <div class="mt-16 text-center space-y-4">
-                  <h3 class="heading-lg text-navy">Languages</h3>
-                  <p class="font-medium text-text">English</p>
-                  <p class="text-sm text-text leading-relaxed">
-                    Able to read and understand technical and academic materials with ease, especially in design and
-                    development contexts. Comfortable using English for basic workplace communication, including
-                    discussions with teammates and understanding project requirements.
-                    <span class="text-teal text-base font-medium mt-2 block">
-                      TOEIC Reading & Listening: 640<br />
-                      TOEIC Speaking & Writing: 270<br />
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
 
-          <!-- Hàng dưới: Internship – đã căn giữa như bạn đang dùng -->
-          <div class="w-full max-w-md">
-            <!-- hoặc max-w-lg nếu muốn rộng hơn một chút -->
+          <!-- Card 2: Internship -->
+          <div class="w-full max-w-3xl">
             <div class="relative group">
               <div
-                class="card-floating bg-surface border border-border/50 rounded-3xl p-8 md:p-10 shadow-2xl hover:shadow-[0_30px_60px_-15px_rgba(236,143,141,0.3)] transition-all duration-500 hover:-translate-y-6 hover:scale-[1.03] backdrop-blur-sm">
+                class="card-floating bg-surface border border-border/50 rounded-3xl p-8 md:p-10 shadow-2xl hover:shadow-[0_30px_60px_-15px_rgba(236,143,141,0.3)] transition-all duration-500 hover:-translate-y-6 hover:scale-[1.03] backdrop-blur-sm"
+              >
                 <div class="absolute -top-16 left-1/2 transform -translate-x-1/2">
                   <div
-                    class="w-28 h-28 rounded-full bg-white flex items-center justify-center shadow-xl border border-border/30">
-                    <img src="/assets/images/logos/vnpt-logo.webp" class="w-20 h-20 object-contain" alt="VNPT" />
+                    class="w-28 h-28 rounded-full bg-white flex items-center justify-center shadow-xl border border-border/30"
+                  >
+                    <img
+                      src="/assets/images/logos/vnpt-logo.webp"
+                      class="w-20 h-20 object-contain"
+                      alt="VNPT"
+                    />
                   </div>
                 </div>
 
@@ -127,28 +115,59 @@
                   <p class="text-sm text-text-muted">4 months</p>
                   <p class="text-sm text-text-muted">October 2024 - February 2025</p>
 
-                  <ul class="mt-6 space-y-3 text-left text-text-muted text-sm">
+                  <ul class="mt-6 space-y-3 text-left text-text-muted text-sm mx-auto max-w-2xl">
                     <li class="flex items-start gap-3">
                       <span class="text-teal text-xl">•</span>
-                      Collaborated with mentors to analyze UI requirements, focusing on implementing
-                      consistent layouts using Angular and NgZorro UI components.
+                      Translated UI designs into responsive interfaces using Angular and NgZorro.
                     </li>
                     <li class="flex items-start gap-3">
                       <span class="text-teal text-xl">•</span>
-                      Contributed to UI debugging and optimization, ensuring that the final web
-                      interface matched design specifications and provided a smooth user experience.
+                      Debugged and optimized code to match design specs and improve user experience.
                     </li>
                     <li class="flex items-start gap-3">
                       <span class="text-teal text-xl">•</span>
-                      Hands-on coding of UI modules from designs, utilizing Angular and NgZorro to
-                      achieve pixel-perfect implementation and maintain design integrity.
+                      Ensured pixel-perfect implementation while maintaining design integrity.
                     </li>
                     <li class="flex items-start gap-3">
                       <span class="text-teal text-xl">•</span>
-                      Bridged the gap between design and code by ensuring visual elements were
-                      functional, responsive, and aligned with user accessibility standards.
+                      Bridged the gap between design and development with attention to accessibility
+                      and consistency.
                     </li>
                   </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Languages -->
+          <div class="w-full max-w-3xl">
+            <div class="relative group">
+              <div
+                class="card-floating bg-surface border border-border/50 rounded-3xl p-8 md:p-10 shadow-2xl hover:shadow-[0_30px_60px_-15px_rgba(236,143,141,0.3)] transition-all duration-500 hover:-translate-y-6 hover:scale-[1.03] backdrop-blur-sm"
+              >
+                <div class="absolute -top-16 left-1/2 transform -translate-x-1/2">
+                  <div
+                    class="w-28 h-28 rounded-full bg-white flex items-center justify-center shadow-xl border border-border/30"
+                  >
+                    <img
+                      src="/assets/images/logos/toeic-logo.png"
+                      class="w-20 h-20 object-contain"
+                      alt="TOEIC"
+                    />
+                  </div>
+                </div>
+
+                <div class="mt-16 text-center space-y-4">
+                  <h3 class="heading-lg text-navy">Languages</h3>
+                  <p class="font-medium text-text">English</p>
+                  <p class="text-sm text-text-muted leading-relaxed">
+                    Proficient in reading and comprehending technical and academic materials. Basic
+                    communication for workplace collaboration.
+                    <span class="text-teal text-base font-medium mt-2 block">
+                      TOEIC Reading & Listening: 640<br />
+                      TOEIC Speaking & Writing: 270<br />
+                    </span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -160,10 +179,10 @@
     <!-- Quick Stats -->
     <div class="grid grid-cols-2 gap-4 pt-6 mt-12">
       @for (stat of stats; track stat.label) {
-      <div class="bg-cream border border-border-soft rounded-xl p-4 text-center">
-        <p class="text-2xl font-semibold text-coral">{{ stat.value }}</p>
-        <p class="text-sm text-text-muted mt-1">{{ stat.label }}</p>
-      </div>
+        <div class="bg-cream border border-border-soft rounded-xl p-4 text-center">
+          <p class="text-2xl font-semibold text-coral">{{ stat.value }}</p>
+          <p class="text-sm text-text-muted mt-1">{{ stat.label }}</p>
+        </div>
       }
     </div>
   </div>
