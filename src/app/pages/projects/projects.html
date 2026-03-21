@@ -1,12 +1,9 @@
-<section id="projects" class="py-24 md:py-32 bg-gradient-to-b from-surface to-bg relative">
+<section id="projects" class="py-12 md:py-18 bg-gradient-to-b from-surface to-bg relative">
   <div class="container-section">
     <!-- Heading -->
-    <div class="text-center mb-16">
+    <div class="text-center mb-8">
       <p class="eyebrow">My Work</p>
       <h2 class="heading-xl text-navy">Featured Projects</h2>
-      <p class="text-lg text-text-muted mt-4 max-w-2xl mx-auto">
-        A collection of my most meaningful work.
-      </p>
     </div>
 
     <!-- Filter Bar -->
@@ -29,37 +26,66 @@
     <!-- Projects Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       @for (project of projects(); track project.id) {
-        <div class="card-project group cursor-pointer flex flex-col h-full">
-          <!-- Phần hình ảnh (giữ nguyên) -->
+        <div
+          class="card-project group cursor-pointer flex flex-col relative transition-all duration-500"
+          [routerLink]="['/projects', project.id]"
+          [ngClass]="{
+            'md:row-span-2 lg:row-span-2 md:-translate-y-4': project.featured,
+            'md:self-center': !project.featured,
+            'hover:shadow-[0_30px_80px_-20px_rgba(236,143,141,0.5)]': project.featured,
+          }"
+        >
+          <!-- Thumbnail -->
           <div class="project-thumb bg-white relative overflow-hidden aspect-[4/3] rounded-t-2xl">
+            <!-- Featured badge -->
+            @if (project.featured) {
+              <span
+                class="absolute top-4 left-4 bg-coral text-white text-xs px-3 py-1 rounded-full z-10"
+              >
+                Featured
+              </span>
+            }
+
             <img
               [src]="project.thumbnail"
               [alt]="project.title"
-              class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
+              class="w-full h-full transition-transform duration-700 group-hover:scale-110"
+              [ngClass]="{
+                'object-cover': project.featured,
+                'object-contain': !project.featured,
+              }"
             />
+
             <div
-              class="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
+              class="absolute inset-0 bg-gradient-to-t to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
+              [ngClass]="{
+                'from-navy/90': project.featured,
+                'from-navy/60': !project.featured,
+              }"
             >
               <p class="text-cream font-medium">View Details →</p>
             </div>
           </div>
 
-          <!-- Phần nội dung text + nút, dùng flex để đẩy nút xuống đáy -->
+          <!-- Content -->
           <div class="p-6 flex flex-col flex-grow">
-            <!-- Nội dung sẽ chiếm hết chỗ còn lại -->
+            <!-- Text -->
             <div class="flex-grow space-y-4">
               <div class="flex justify-between items-start gap-4">
-                <h3 class="heading-md text-navy group-hover:text-coral transition-colors">
+                <h3
+                  class="text-navy group-hover:text-coral transition-colors"
+                  [ngClass]="{
+                    'heading-lg': project.featured,
+                    'heading-md': !project.featured,
+                  }"
+                >
                   {{ project.title }}
                 </h3>
+
                 <span class="tag-chip-accent text-sm px-3 py-1 shrink-0">
                   {{ project.category }}
                 </span>
               </div>
-
-              <p class="text-text-muted line-clamp-3">
-                {{ project.shortDesc }}
-              </p>
 
               <div class="flex flex-wrap gap-2 pt-2">
                 @for (tag of project.tags; track tag) {
@@ -70,10 +96,9 @@
               </div>
             </div>
 
-            <!-- Nút cố định dưới cùng -->
+            <!-- Button -->
             <div class="mt-6 pt-2 border-t border-border/30">
               <a
-                [routerLink]="['/projects', project.id]"
                 class="btn btn-primary w-full justify-center"
               >
                 View Case Study

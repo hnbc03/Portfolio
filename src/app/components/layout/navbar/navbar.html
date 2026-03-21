@@ -2,9 +2,10 @@
   class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out animate-fade"
   [ngClass]="{
     'bg-[var(--color-navy)]/90 backdrop-blur-md shadow-lg': isScrolled && !isDarkMode,
-    'bg-[var(--color-surface)]/90 backdrop-blur-md shadow-lg border-b border-[var(--color-border)]': isScrolled && isDarkMode,
+    'bg-[var(--color-surface)]/90 backdrop-blur-md shadow-lg border-b border-[var(--color-border)]':
+      isScrolled && isDarkMode,
     'bg-[var(--color-navy)] backdrop-blur-sm': !isScrolled && !isDarkMode,
-    'bg-[var(--color-surface)]/80 backdrop-blur-sm': !isScrolled && isDarkMode
+    'bg-[var(--color-surface)]/80 backdrop-blur-sm': !isScrolled && isDarkMode,
   }"
 >
   <nav class="container-section flex items-center justify-between h-20">
@@ -12,7 +13,7 @@
     <a
       routerLink="/"
       class="logo flex items-center gap-2 font-display font-semibold text-2xl tracking-tight"
-      [ngClass]="{'text-white': !isDarkMode, 'text-[var(--color-text)]': isDarkMode}"
+      [ngClass]="{ 'text-white': !isDarkMode, 'text-[var(--color-text)]': isDarkMode }"
     >
       <span class="logo-accent">HNBC</span>
     </a>
@@ -26,7 +27,7 @@
             class="nav-link font-medium text-sm uppercase tracking-wide transition-colors"
             [ngClass]="{
               'text-white hover:text-[var(--color-coral-soft)]': !isDarkMode,
-              'text-[var(--color-text-muted)] hover:text-[var(--color-coral)]': isDarkMode
+              'text-[var(--color-text-muted)] hover:text-[var(--color-coral)]': isDarkMode,
             }"
           >
             {{ item.label }}
@@ -41,7 +42,8 @@
           class="w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110"
           [ngClass]="{
             'bg-white/10 hover:bg-white/20 text-white': !isDarkMode,
-            'bg-[var(--color-surface-2)]/50 hover:bg-[var(--color-surface-2)] text-[var(--color-text-muted)] hover:text-[var(--color-text)]': isDarkMode
+            'bg-[var(--color-surface-2)]/50 hover:bg-[var(--color-surface-2)] text-[var(--color-text-muted)] hover:text-[var(--color-text)]':
+              isDarkMode,
           }"
           aria-label="Toggle theme"
         >
@@ -54,18 +56,12 @@
           class="btn btn-secondary transition-all"
           [ngClass]="{
             'text-white border-white/30 hover:bg-white/10': !isDarkMode,
-            'text-[var(--color-text)] border-[var(--color-border)] hover:bg-[var(--color-surface-2)] hover:border-[var(--color-text-muted)]': isDarkMode
+            'text-[var(--color-text)] border-[var(--color-border)] hover:bg-[var(--color-surface-2)] hover:border-[var(--color-text-muted)]':
+              isDarkMode,
           }"
         >
           Download CV
         </a>
-
-        <button
-          (click)="scrollTo('contact')"
-          class="btn btn-primary text-sm px-6 py-2"
-        >
-          Let's Chat
-        </button>
       </div>
     </div>
 
@@ -74,10 +70,15 @@
       class="md:hidden focus:outline-none"
       (click)="toggleMenu()"
       aria-label="Toggle menu"
-      [ngClass]="{'text-white': !isDarkMode, 'text-[var(--color-text)]': isDarkMode}"
+      [ngClass]="{ 'text-white': !isDarkMode, 'text-[var(--color-text)]': isDarkMode }"
     >
       <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="menuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'" />
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          [attr.d]="menuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'"
+        />
       </svg>
     </button>
   </nav>
@@ -89,7 +90,7 @@
       'bg-[var(--color-navy)]/95': !isDarkMode,
       'bg-[var(--color-surface)]/95 border-b border-[var(--color-border)]': isDarkMode,
       'max-h-[1000px] opacity-100 py-6': menuOpen,
-      'max-h-0 opacity-0 py-0': !menuOpen
+      'max-h-0 opacity-0 py-0': !menuOpen,
     }"
   >
     <div class="container-section flex flex-col gap-5">
@@ -97,7 +98,10 @@
         <button
           (click)="scrollTo(item.fragment)"
           class="text-left py-3 text-lg font-medium transition-colors"
-          [ngClass]="{'text-white hover:text-[var(--color-coral-soft)]': !isDarkMode, 'text-[var(--color-text)] hover:text-[var(--color-coral)]': isDarkMode}"
+          [ngClass]="{
+            'text-white hover:text-[var(--color-coral-soft)]': !isDarkMode,
+            'text-[var(--color-text)] hover:text-[var(--color-coral)]': isDarkMode,
+          }"
         >
           {{ item.label }}
         </button>
@@ -109,7 +113,8 @@
           class="btn btn-secondary transition-all justify-center py-3"
           [ngClass]="{
             'text-white border-white/30 hover:bg-white/10': !isDarkMode,
-            'text-[var(--color-text)] border-[var(--color-border)] hover:bg-[var(--color-surface-2)]': isDarkMode
+            'text-[var(--color-text)] border-[var(--color-border)] hover:bg-[var(--color-surface-2)]':
+              isDarkMode,
           }"
         >
           <span class="text-xl">{{ isDarkMode ? '☀️' : '🌙' }}</span>
@@ -122,18 +127,12 @@
           class="btn btn-secondary transition-all justify-center py-3"
           [ngClass]="{
             'text-white border-white/30 hover:bg-white/10': !isDarkMode,
-            'text-[var(--color-text)] border-[var(--color-border)] hover:bg-[var(--color-surface-2)]': isDarkMode
+            'text-[var(--color-text)] border-[var(--color-border)] hover:bg-[var(--color-surface-2)]':
+              isDarkMode,
           }"
         >
           Download CV
         </a>
-
-        <button
-          (click)="scrollTo('contact')"
-          class="btn btn-primary justify-center py-3"
-        >
-          Let's Chat
-        </button>
       </div>
     </div>
   </div>

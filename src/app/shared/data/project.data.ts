@@ -2,85 +2,6 @@
 import { Project } from '../models/project.interface';
 
 export const PROJECTS: Project[] = [
-  {
-    id: 'yumdaily',
-    title: 'YumDaily',
-    category: 'UI/UX',
-    shortDesc: 'A social network for food lovers to connect and share recipes.',
-    year: '2024',
-    tags: ['Figma', 'UX Research', 'Prototype', 'Wireframe', 'Mockup'],
-    thumbnail: '/assets/images/projects/yumdaily.png',
-    figmaUrl:
-      'https://www.figma.com/proto/nC6K9b5uTbrPKAnFz36DOb/YumDaily?node-id=1620-15959&node-type=frame&viewport=567%2C2418%2C0.08&t=XeqpWHvWFNYuVBpg-0&scaling=contain&content-scaling=fixed&starting-point-node-id=1620%3A15959&show-proto-sidebar=1',
-    role: 'UI/UX Designer',
-    timeline: 'October 2024 – November 2024',
-    roleScope:
-      'Full-cycle UI/UX design: UX Research → Wireframing → Visual Design → Prototyping → Usability testing (web & mobile).',
-    overview: {
-      summary:
-        'YumDaily was a team-based academic project aimed at addressing the fragmentation of food content across social platforms. As a group, we observed that recipes are often buried within general feeds, making them difficult to revisit or organize. This created an opportunity to rethink how food lovers could share and engage with culinary content in a more structured and meaningful way.',
-      solution:
-        'To address this, our team designed YumDaily as a dedicated social ecosystem for food enthusiasts. We focused on creating a warm and intuitive experience, with a seamless flow for both content creation and discovery. Through iterative design and user feedback, we refined key interactions to make sharing recipes feel effortless while encouraging community engagement.',
-    },
-    problemStatement: [
-      'Recipe content is often buried within general social media feeds.',
-      'There is a lack of dedicated tools for creating and sharing recipes in a structured and visually appealing way.',
-      'It is difficult to build a long-term, engaged community around food-related content.',
-    ],
-    designProcess: [
-      {
-        title: 'User Research & Survey',
-        description:
-          'Collected 183 responses through Google Forms to understand user pain points and social interaction behaviors related to food content.',
-        images: ['yumdaily/research-survey.png', 'yumdaily/research-insights.png'],
-      },
-      {
-        title: 'Wireframing & Information Architecture',
-        description:
-          'Explored multiple layout directions for key features such as feed, recipe creator, profile, and messaging to define a clear and intuitive structure.',
-        images: ['yumdaily/wireframe-mobile-1.png', 'yumdaily/wireframe-desktop-feed.png'],
-      },
-      {
-        title: 'Visual Design & Branding',
-        description:
-          'Developed a warm visual identity, including color palette, logo, and typography aligned with the culinary theme.',
-        images: ['yumdaily/brand-styleguide.png', 'yumdaily/logo-iterations.png'],
-      },
-      {
-        title: 'High-fidelity & Interactive Prototype',
-        description:
-          'Designed over 15 core screens with micro-interactions across both web and mobile platforms.',
-        images: ['yumdaily/hi-fi-feed-mobile.png', 'yumdaily/hi-fi-recipe-desktop.png'],
-      },
-    ],
-    results: [
-      'The prototype achieved high usability scores during testing rounds.',
-      'Improved the content-sharing flow, reducing the number of steps by 40% compared to the initial concept.',
-    ],
-    metrics: ['183 survey responses', 'Positive feedback on warmth and ease of use'],
-    gallery: [
-      {
-        src: 'yumdaily/hero-mobile.png',
-        alt: 'Mobile home',
-        caption: 'Mobile Feed',
-        type: 'mobile',
-      },
-      {
-        src: 'yumdaily/hero-desktop.png',
-        alt: 'Desktop exploration',
-        caption: 'Desktop Home',
-        type: 'desktop',
-      },
-      {
-        src: 'yumdaily/recipe-creator.png',
-        alt: 'Recipe creation',
-        caption: 'Recipe Creator Flow',
-      },
-      { src: 'yumdaily/search-results.png', alt: 'Search & discovery', caption: 'Advanced Search' },
-    ],
-    tools: [],
-  },
-
   // ────────────────────────────────────────────────
   // Weatherr (IoT)
   // ────────────────────────────────────────────────
@@ -156,6 +77,86 @@ export const PROJECTS: Project[] = [
         alt: 'Grafana analytics',
         caption: 'Phân tích lịch sử dữ liệu',
       },
+    ],
+    tools: [],
+  },
+
+  {
+    id: 'yumdaily',
+    title: 'YumDaily',
+    category: 'UI/UX',
+    featured: true,
+    shortDesc: 'A social network for food lovers to connect and share recipes.',
+    year: '2024',
+    tags: ['Figma', 'UX Research', 'Prototype', 'Wireframe', 'Mockup'],
+    thumbnail: '/assets/images/projects/yumdaily.png',
+    figmaUrl:
+      'https://www.figma.com/proto/nC6K9b5uTbrPKAnFz36DOb/YumDaily?node-id=1620-15959&node-type=frame&viewport=567%2C2418%2C0.08&t=XeqpWHvWFNYuVBpg-0&scaling=contain&content-scaling=fixed&starting-point-node-id=1620%3A15959&show-proto-sidebar=1',
+    role: 'UI/UX Designer',
+    timeline: 'October 2024 – November 2024',
+    roleScope:
+      'Full-cycle UI/UX design: UX Research → Wireframing → Visual Design → Prototyping → Usability testing (web & mobile).',
+    overview: {
+      summary:
+        'YumDaily was a team-based academic project aimed at addressing the fragmentation of food content across social platforms. As a group, we observed that recipes are often buried within general feeds, making them difficult to revisit or organize. This created an opportunity to rethink how food lovers could share and engage with culinary content in a more structured and meaningful way.',
+      solution:
+        'To address this, our team designed YumDaily as a dedicated social ecosystem for food enthusiasts. We focused on creating a warm and intuitive experience, with a seamless flow for both content creation and discovery. Through iterative design and user feedback, we refined key interactions to make sharing recipes feel effortless while encouraging community engagement.',
+    },
+    problemStatement: [
+      'Recipe content is often buried within general social media feeds.',
+      'There is a lack of dedicated tools for creating and sharing recipes in a structured and visually appealing way.',
+      'It is difficult to build a long-term, engaged community around food-related content.',
+    ],
+    designProcess: [
+      {
+        title: 'User Research & Survey',
+        description:
+          'Collected 183 responses through Google Forms to understand user pain points and social interaction behaviors related to food content.',
+        images: ['yumdaily/research-survey.png', 'yumdaily/research-insights.png'],
+      },
+      {
+        title: 'Wireframing & Information Architecture',
+        description:
+          'Explored multiple layout directions for key features such as feed, recipe creator, profile, and messaging to define a clear and intuitive structure.',
+        images: ['yumdaily/wireframe-mobile-1.png', 'yumdaily/wireframe-desktop-feed.png'],
+      },
+      {
+        title: 'Visual Design & Branding',
+        description:
+          'Developed a warm visual identity, including color palette, logo, and typography aligned with the culinary theme.',
+        images: ['yumdaily/brand-styleguide.png', 'yumdaily/logo-iterations.png'],
+      },
+      {
+        title: 'High-fidelity & Interactive Prototype',
+        description:
+          'Designed over 15 core screens with micro-interactions across both web and mobile platforms.',
+        images: ['yumdaily/hi-fi-feed-mobile.png', 'yumdaily/hi-fi-recipe-desktop.png'],
+      },
+    ],
+    results: [
+      'The prototype achieved high usability scores during testing rounds.',
+      'Improved the content-sharing flow, reducing the number of steps by 40% compared to the initial concept.',
+    ],
+    metrics: ['183 survey responses', 'Positive feedback on warmth and ease of use'],
+    gallery: [
+      {
+        src: 'yumdaily/hero-mobile.png',
+        alt: 'Mobile home',
+        caption: 'Mobile Feed',
+        type: 'mobile',
+      },
+      {
+        src: 'yumdaily/hero-desktop.png',
+        alt: 'Desktop exploration',
+        caption: 'Desktop Home',
+        type: 'desktop',
+      },
+      {
+        src: 'yumdaily/recipe-creator.png',
+        alt: 'Recipe creation',
+        caption: 'Recipe Creator Flow',
+      },
+      { src: 'yumdaily/search-results.png', alt: 'Search & discovery', caption: 'Advanced Search' },
     ],
     tools: [],
   },

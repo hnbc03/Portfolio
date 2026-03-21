@@ -1,7 +1,7 @@
-<section id="skills" class="py-24 md:py-32 bg-surface-2 relative overflow-hidden">
+<section id="skills" class="py-12 md:py-18 bg-surface-2 relative overflow-hidden">
   <div class="container-section">
     <!-- Heading -->
-    <div class="text-center mb-16">
+    <div class="text-center mb-8">
       <p class="eyebrow">What I Bring</p>
       <h2 class="heading-xl text-navy">Skills & Tools</h2>
       <p class="text-lg text-text-muted mt-4 max-w-3xl mx-auto">
@@ -27,13 +27,7 @@
               <h4 class="text-xl font-medium text-navy">{{ skill.name }}</h4>
             </div>
             <!-- Progress bar nhẹ (optional, nếu muốn visual hơn) -->
-            <div class="w-full bg-border-soft rounded-full h-2.5">
-              <div
-                class="bg-teal rounded-full h-2.5 transition-all"
-                [style.width.%]="skill.level"
-              ></div>
-            </div>
-            <p class="text-text-muted text-sm text-center">{{ skill.level }}% • {{ skill.desc }}</p>
+            <p class="text-text-muted text-sm text-center">{{ skill.desc }}</p>
           </div>
         }
       </div>
@@ -94,11 +88,6 @@
             <h4 class="text-xl font-semibold text-navy mb-3">
               {{ skill.name }}
             </h4>
-
-            <!-- DESCRIPTION -->
-            <p class="text-text-muted leading-relaxed">
-              {{ skill.description }}
-            </p>
           </div>
         }
       </div>

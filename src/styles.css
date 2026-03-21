@@ -16,6 +16,7 @@
   /* Neutrals & Surface */
   --color-bg: #f5f7f8; /* Nền page chính – sáng và sạch sẽ */
   --color-surface: #ffffff;
+  --color-surface-n: #162635;
   --color-surface-2: #e9ecef; /* Card nhẹ hoặc section alternate */
   --color-border: #d7d7d7; /* Tận dụng mã màu xám của bạn cho border */
   --color-border-soft: #e2e2e2;
@@ -53,6 +54,7 @@
   /* 🎯 Background – sâu hơn, có contrast */
   --color-bg: #0f1a24;
   --color-surface: #162635;
+  --color-surface-n: #ffffff;
   --color-surface-2: #1d3447;
 
   /* 🎯 Border – subtle hơn */
@@ -67,7 +69,7 @@
   /* 🎯 Accent – nổi bật hơn trên nền tối */
   --color-coral: #fe7743;
   --color-coral-dark: #e66a3a;
-  --color-coral-soft-2: #CD2C58;
+  --color-coral-soft-2: #b45254cf;
 
   --color-teal: #6bbcd6;
 
